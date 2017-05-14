@@ -67,7 +67,7 @@ export default {
       vm.kmlData = new window.google.maps.KmlLayer({
         url: vm.kmlLayer,
         map: window.gmap,
-        suppressInfoWindows: true,
+        suppressInfoWindows: false,
         preserveViewport: true
       });
     },
