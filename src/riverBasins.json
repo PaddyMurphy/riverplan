@@ -1,0 +1,82 @@
+{"data": [
+	{
+		"name": "Arkansas River Basin",
+		"description": "",
+		"categories": ["fishing","camping"]
+	},
+	{
+		"name": "Brazos River Basin",
+		"description": "",
+		"categories": ["fishing","camping","whitewater"]
+	},
+	{
+		"name": "Coastal Basins",
+		"description": "",
+		"categories": ["fishing","camping"]
+	},
+	{
+		"name": "Colorado River Basin",
+		"description": "",
+		"categories": ["fishing","camping"]
+	},
+	{
+		"name": "Cypress River Basin",
+		"description": "",
+		"categories": ["fishing","camping"]
+	},
+	{
+		"name": "Guadalupe River Basin",
+		"description": "",
+		"categories": ["fishing","camping","whitewater"]
+	},
+	{
+		"name": "Lavaca River Basin",
+		"description": "",
+		"categories": ["fishing","camping"]
+	},
+	{
+		"name": "Neches River Basin",
+		"description": "",
+		"categories": ["fishing","camping","whitewater"]
+	},
+	{
+		"name": "Nueces River Basin",
+		"description": "",
+		"categories": ["fishing","camping","whitewater"]
+	},
+	{
+		"name": "Red River Basin",
+		"description": "",
+		"categories": ["fishing","camping"]
+	},
+	{
+		"name": "Rio Grande",
+		"description": "",
+		"categories": ["fishing","camping"]
+	},
+	{
+		"name": "Sabine River Basin",
+		"description": "",
+		"categories": ["fishing","camping"]
+	},
+	{
+		"name": "San Antonio River Basin",
+		"description": "",
+		"categories": ["fishing","camping"]
+	},
+	{
+		"name": "San Jacinto River Basin",
+		"description": "",
+		"categories": ["fishing","camping"]
+	},
+	{
+		"name": "Sulfer River Basin",
+		"description": "",
+		"categories": ["fishing","camping"]
+	},
+	{
+		"name": "Trinity River Basin",
+		"description": "",
+		"categories": ["fishing","camping"]
+	}
+]}

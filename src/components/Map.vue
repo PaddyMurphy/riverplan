@@ -6,6 +6,7 @@ TODO:
 - assign descriptions to rivers
 - show recommended flow rates
 - indicate whitewater or fishing/camping
+- launch google earth web from point
 -->
 <template>
   <div class="map">
@@ -14,7 +15,6 @@ TODO:
       v-on:toggleSatellite="toggleSatellite"
       v-on:toggleKml="toggleKml"
     />
-
     <div id="gmap"></div>
   </div>
 </template>
@@ -37,7 +37,8 @@ export default {
       showKmlLayer: true,
       zoom: 6, // TODO: lower for mobile
       showKml: true,
-      showSatellite: false
+      showSatellite: false,
+      selected: ''
     }
   },
   mounted: function () {
@@ -69,6 +70,11 @@ export default {
         map: window.gmap,
         suppressInfoWindows: false,
         preserveViewport: true
+      });
+
+      vm.kmlData.addListener('click', function (kmlEvent) {
+        var text = kmlEvent.featureData;
+        console.log(text);
       });
     },
     hideKmlLayer: function () {
