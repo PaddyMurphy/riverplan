@@ -9,13 +9,17 @@ TODO:
 - launch google earth web from point
 -->
 <template>
-  <div class="map">
-    <map-controls
-      :showKmlLayer="showKmlLayer"
-      v-on:toggleSatellite="toggleSatellite"
-      v-on:toggleKml="toggleKml"
-    />
-    <div id="gmap"></div>
+  <div class="map-view">
+    <div class="map-container">
+      <map-controls
+        :showKmlLayer="showKmlLayer"
+        v-on:toggleKml="toggleKml"
+      />
+      <div id="gmap"></div>
+    </div><!-- END map-container -->
+    <div class="info-container">
+      info
+    </div>
   </div>
 </template>
 
@@ -25,7 +29,7 @@ import MapControls from '@/components/MapControls';
 import loadGoogleMapsAPI from 'load-google-maps-api';
 
 export default {
-  name: 'map',
+  name: 'mapview',
   data () {
     return {
       key: 'AIzaSyA1fV5RautETdjZsTMpClgqHKIgMa8WXPI',
@@ -37,7 +41,6 @@ export default {
       showKmlLayer: true,
       zoom: 6, // TODO: lower for mobile
       showKml: true,
-      showSatellite: false,
       selected: ''
     }
   },
@@ -80,10 +83,6 @@ export default {
     hideKmlLayer: function () {
       this.kmlData.setMap(null);
     },
-    toggleSatellite: function () {
-      console.log('toggleSatellite');
-      window.gmap.setMapTypeId('satellite');
-    },
     loadGoogleMaps: function () {
       const vm = this;
 
@@ -119,8 +118,18 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.map-view {
+  display: flex;
+  flex-wrap: wrap;
+}
+.map-container {
+  flex: 1 1 auto;
+}
+.info-container {
+  flex: 0 1 20%;
+}
 #gmap {
-  width: 100vw;
+  width: 100%;
   height: 80vh;
 }
 </style>
