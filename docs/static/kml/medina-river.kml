@@ -14,7 +14,7 @@
 </Schema>
 <Style id="river">
   <LineStyle>
-    <color>87000000</color>
+    <color>7D0000FF</color>
     <width>1</width>
   </LineStyle>
 </Style>
@@ -22,7 +22,8 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
-	<ExtendedData><SchemaData schemaUrl="#Medina-river">
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">1</SimpleData>
 		<SimpleData name="RCH_ID">2</SimpleData>
 		<SimpleData name="COM_ID">10836514</SimpleData>
@@ -38,6 +39,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">2</SimpleData>
 		<SimpleData name="RCH_ID">3</SimpleData>
@@ -54,6 +56,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">3</SimpleData>
 		<SimpleData name="RCH_ID">4</SimpleData>
@@ -70,6 +73,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">4</SimpleData>
 		<SimpleData name="RCH_ID">5</SimpleData>
@@ -86,6 +90,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">13</SimpleData>
 		<SimpleData name="RCH_ID">14</SimpleData>
@@ -102,6 +107,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">14</SimpleData>
 		<SimpleData name="RCH_ID">15</SimpleData>
@@ -118,6 +124,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">15</SimpleData>
 		<SimpleData name="RCH_ID">16</SimpleData>
@@ -134,6 +141,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">16</SimpleData>
 		<SimpleData name="RCH_ID">17</SimpleData>
@@ -150,6 +158,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">17</SimpleData>
 		<SimpleData name="RCH_ID">18</SimpleData>
@@ -166,6 +175,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">18</SimpleData>
 		<SimpleData name="RCH_ID">19</SimpleData>
@@ -182,6 +192,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">19</SimpleData>
 		<SimpleData name="RCH_ID">20</SimpleData>
@@ -198,6 +209,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">20</SimpleData>
 		<SimpleData name="RCH_ID">21</SimpleData>
@@ -214,6 +226,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">25</SimpleData>
 		<SimpleData name="RCH_ID">26</SimpleData>
@@ -230,6 +243,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">26</SimpleData>
 		<SimpleData name="RCH_ID">27</SimpleData>
@@ -246,6 +260,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">27</SimpleData>
 		<SimpleData name="RCH_ID">28</SimpleData>
@@ -262,6 +277,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">28</SimpleData>
 		<SimpleData name="RCH_ID">29</SimpleData>
@@ -278,6 +294,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">29</SimpleData>
 		<SimpleData name="RCH_ID">30</SimpleData>
@@ -294,6 +311,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">30</SimpleData>
 		<SimpleData name="RCH_ID">31</SimpleData>
@@ -310,6 +328,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">31</SimpleData>
 		<SimpleData name="RCH_ID">32</SimpleData>
@@ -326,6 +345,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">32</SimpleData>
 		<SimpleData name="RCH_ID">33</SimpleData>
@@ -342,6 +362,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">33</SimpleData>
 		<SimpleData name="RCH_ID">34</SimpleData>
@@ -358,6 +379,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">34</SimpleData>
 		<SimpleData name="RCH_ID">35</SimpleData>
@@ -374,6 +396,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">35</SimpleData>
 		<SimpleData name="RCH_ID">36</SimpleData>
@@ -390,6 +413,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">36</SimpleData>
 		<SimpleData name="RCH_ID">37</SimpleData>
@@ -406,6 +430,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">37</SimpleData>
 		<SimpleData name="RCH_ID">38</SimpleData>
@@ -422,6 +447,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">38</SimpleData>
 		<SimpleData name="RCH_ID">39</SimpleData>
@@ -438,6 +464,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">39</SimpleData>
 		<SimpleData name="RCH_ID">40</SimpleData>
@@ -454,6 +481,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">40</SimpleData>
 		<SimpleData name="RCH_ID">41</SimpleData>
@@ -470,6 +498,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">41</SimpleData>
 		<SimpleData name="RCH_ID">42</SimpleData>
@@ -486,6 +515,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">42</SimpleData>
 		<SimpleData name="RCH_ID">43</SimpleData>
@@ -502,6 +532,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">43</SimpleData>
 		<SimpleData name="RCH_ID">44</SimpleData>
@@ -518,6 +549,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">44</SimpleData>
 		<SimpleData name="RCH_ID">45</SimpleData>
@@ -534,6 +566,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">45</SimpleData>
 		<SimpleData name="RCH_ID">46</SimpleData>
@@ -550,6 +583,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">46</SimpleData>
 		<SimpleData name="RCH_ID">47</SimpleData>
@@ -566,6 +600,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">47</SimpleData>
 		<SimpleData name="RCH_ID">48</SimpleData>
@@ -582,6 +617,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">48</SimpleData>
 		<SimpleData name="RCH_ID">49</SimpleData>
@@ -598,6 +634,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">49</SimpleData>
 		<SimpleData name="RCH_ID">50</SimpleData>
@@ -614,6 +651,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">77</SimpleData>
 		<SimpleData name="RCH_ID">78</SimpleData>
@@ -630,6 +668,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">205</SimpleData>
 		<SimpleData name="RCH_ID">206</SimpleData>
@@ -646,6 +685,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">281</SimpleData>
 		<SimpleData name="RCH_ID">282</SimpleData>
@@ -662,6 +702,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">282</SimpleData>
 		<SimpleData name="RCH_ID">283</SimpleData>
@@ -678,6 +719,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">283</SimpleData>
 		<SimpleData name="RCH_ID">284</SimpleData>
@@ -694,6 +736,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">284</SimpleData>
 		<SimpleData name="RCH_ID">285</SimpleData>
@@ -710,6 +753,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">285</SimpleData>
 		<SimpleData name="RCH_ID">286</SimpleData>
@@ -726,6 +770,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">286</SimpleData>
 		<SimpleData name="RCH_ID">287</SimpleData>
@@ -742,6 +787,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">291</SimpleData>
 		<SimpleData name="RCH_ID">292</SimpleData>
@@ -758,6 +804,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">292</SimpleData>
 		<SimpleData name="RCH_ID">293</SimpleData>
@@ -774,6 +821,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">381</SimpleData>
 		<SimpleData name="RCH_ID">382</SimpleData>
@@ -790,6 +838,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">382</SimpleData>
 		<SimpleData name="RCH_ID">383</SimpleData>
@@ -806,6 +855,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">383</SimpleData>
 		<SimpleData name="RCH_ID">384</SimpleData>
@@ -822,6 +872,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">385</SimpleData>
 		<SimpleData name="RCH_ID">386</SimpleData>
@@ -838,6 +889,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">392</SimpleData>
 		<SimpleData name="RCH_ID">393</SimpleData>
@@ -854,6 +906,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">393</SimpleData>
 		<SimpleData name="RCH_ID">394</SimpleData>
@@ -870,6 +923,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">394</SimpleData>
 		<SimpleData name="RCH_ID">395</SimpleData>
@@ -886,6 +940,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">402</SimpleData>
 		<SimpleData name="RCH_ID">403</SimpleData>
@@ -902,6 +957,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">403</SimpleData>
 		<SimpleData name="RCH_ID">404</SimpleData>
@@ -918,6 +974,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">404</SimpleData>
 		<SimpleData name="RCH_ID">405</SimpleData>
@@ -934,6 +991,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">405</SimpleData>
 		<SimpleData name="RCH_ID">406</SimpleData>
@@ -950,6 +1008,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">410</SimpleData>
 		<SimpleData name="RCH_ID">411</SimpleData>
@@ -966,6 +1025,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">411</SimpleData>
 		<SimpleData name="RCH_ID">412</SimpleData>
@@ -982,6 +1042,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">412</SimpleData>
 		<SimpleData name="RCH_ID">413</SimpleData>
@@ -998,6 +1059,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">413</SimpleData>
 		<SimpleData name="RCH_ID">414</SimpleData>
@@ -1014,6 +1076,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">414</SimpleData>
 		<SimpleData name="RCH_ID">415</SimpleData>
@@ -1030,6 +1093,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">415</SimpleData>
 		<SimpleData name="RCH_ID">416</SimpleData>
@@ -1046,6 +1110,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">416</SimpleData>
 		<SimpleData name="RCH_ID">417</SimpleData>
@@ -1062,6 +1127,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">417</SimpleData>
 		<SimpleData name="RCH_ID">418</SimpleData>
@@ -1078,6 +1144,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">418</SimpleData>
 		<SimpleData name="RCH_ID">419</SimpleData>
@@ -1094,6 +1161,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">559</SimpleData>
 		<SimpleData name="RCH_ID">560</SimpleData>
@@ -1110,6 +1178,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">566</SimpleData>
 		<SimpleData name="RCH_ID">567</SimpleData>
@@ -1126,6 +1195,7 @@
   <Placemark>
   	<styleUrl>#river</styleUrl>
 	<name>Medina River</name>
+	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">567</SimpleData>
 		<SimpleData name="RCH_ID">568</SimpleData>
