@@ -75,6 +75,15 @@ export default {
         preserveViewport: true
       });
 
+      // NOTE: order matters, keep rivers below data layer
+      // eslint-disable-next-line
+      var kmlRiverData = new window.google.maps.KmlLayer({
+        url: 'https://mountaindrawn.com/riverplan/static/kml/medina-river.kml',
+        map: window.gmap,
+        suppressInfoWindows: true,
+        preserveViewport: true
+      });
+
       vm.kmlData.addListener('click', function (kmlEvent) {
         var text = kmlEvent.featureData;
         console.log(text);
@@ -105,7 +114,6 @@ export default {
         styles: vm.mapStyles,
         mapTypeId: vm.mapType
       });
-
       // vm.setGoogleMapEvents();
       if (vm.showKmlLayer) {
         vm.displayKmlLayer();

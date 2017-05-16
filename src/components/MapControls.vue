@@ -2,10 +2,10 @@
   <div class="map-controls">
     <button class="btn-kml" @click.prevent="toggleKml">{{ buttonText }} Gauges</button>
 
-    <select v-model="selected" @change="selectBasin" v-if="riverBasins">
-      <option value="">River basins</option>
+    <select v-model="selected" @change="selectBasin" v-if="mapRivers">
+      <option value="">Rivers</option>
       <option
-        v-for="river in riverBasins"
+        v-for="river in mapRivers"
         :value="river.name"
       >{{ river.name }}</option>
     </select>
@@ -13,13 +13,13 @@
 </template>
 
 <script>
-import riverBasins from '@/riverBasins.json';
+import mapRivers from '@/mapRivers.json';
 
 export default {
   name: 'mapcontrols',
   data () {
     return {
-      riverBasins: riverBasins.data,
+      mapRivers: mapRivers.data,
       selected: ''
     }
   },

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+    <name>Riverplan map styles</name>
+
+    <Style id="river">
+      <LineStyle>
+        <color>770000FF</color>
+        <outline>0</outline>
+      </LineStyle>
+    </Style>
+
+</Document>
+</kml>
