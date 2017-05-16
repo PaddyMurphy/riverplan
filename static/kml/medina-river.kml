@@ -2,32 +2,17 @@
 <kml xmlns="http://www.opengis.net/kml/2.2">
   <Document>
     <name>Medina-river</name>
-    <Style id="line-0288D1-1200-normal">
+    <Style id="river">
       <LineStyle>
-        <color>ffd18802</color>
-        <width>1.2</width>
+        <color>770000FF</color>
+        <width>1</width>
       </LineStyle>
     </Style>
-    <Style id="line-0288D1-1200-highlight">
-      <LineStyle>
-        <color>ffd18802</color>
-        <width>1.8</width>
-      </LineStyle>
-    </Style>
-    <StyleMap id="line-0288D1-1200">
-      <Pair>
-        <key>normal</key>
-        <styleUrl>#line-0288D1-1200-normal</styleUrl>
-      </Pair>
-      <Pair>
-        <key>highlight</key>
-        <styleUrl>#line-0288D1-1200-highlight</styleUrl>
-      </Pair>
-    </StyleMap>
+
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 1<br>RCH_ID: 2<br>COM_ID: 10836514<br>RCH_CODE: 12100302000057<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 40030.66406250000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.38381364689]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -149,7 +134,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 2<br>RCH_ID: 3<br>COM_ID: 10836516<br>RCH_CODE: 12100302000068<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 1692.99462891000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.01672704231]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -209,7 +194,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 3<br>RCH_ID: 4<br>COM_ID: 10836518<br>RCH_CODE: 12100302000069<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 678.47332763700<br>GNIS_ID: 01374866<br>SHAPE_len: 0.00627352698]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -256,7 +241,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 4<br>RCH_ID: 5<br>COM_ID: 10836520<br>RCH_CODE: 12100302000070<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 2928.18286133000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.02823343678]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -326,7 +311,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 13<br>RCH_ID: 14<br>COM_ID: 10836538<br>RCH_CODE: 12100302000079<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 4289.46386719000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.04172085254]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -401,7 +386,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 14<br>RCH_ID: 15<br>COM_ID: 10836540<br>RCH_CODE: 12100302000080<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 5233.43798828000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.05020786188]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -485,7 +470,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 15<br>RCH_ID: 16<br>COM_ID: 10836542<br>RCH_CODE: 12100302000081<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 1933.10278320000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.01923975461]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -538,7 +523,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 16<br>RCH_ID: 17<br>COM_ID: 10836544<br>RCH_CODE: 12100302000082<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 443.82125854500<br>GNIS_ID: 01374866<br>SHAPE_len: 0.00451872460]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -586,7 +571,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 17<br>RCH_ID: 18<br>COM_ID: 10836546<br>RCH_CODE: 12100302000083<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 2493.01416016000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.02309215165]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -646,7 +631,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 18<br>RCH_ID: 19<br>COM_ID: 10836548<br>RCH_CODE: 12100302000084<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 741.37646484400<br>GNIS_ID: 01374866<br>SHAPE_len: 0.00731170535]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -695,7 +680,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 19<br>RCH_ID: 20<br>COM_ID: 10836550<br>RCH_CODE: 12100302000085<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 1174.80590820000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.01186730359]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -748,7 +733,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 20<br>RCH_ID: 21<br>COM_ID: 10836552<br>RCH_CODE: 12100302000086<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 3112.35522461000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.03068258515]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -821,7 +806,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 25<br>RCH_ID: 26<br>COM_ID: 10836562<br>RCH_CODE: 12100302000091<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 5352.72314453000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.05198057836]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -913,7 +898,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 26<br>RCH_ID: 27<br>COM_ID: 10836564<br>RCH_CODE: 12100302000092<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 3411.84008789000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.03239383176]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -993,7 +978,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 27<br>RCH_ID: 28<br>COM_ID: 10836566<br>RCH_CODE: 12100302000093<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 2331.90087891000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.02345166078]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -1053,7 +1038,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 28<br>RCH_ID: 29<br>COM_ID: 10836568<br>RCH_CODE: 12100302000094<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 4837.44091797000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.04680945360]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -1134,7 +1119,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 29<br>RCH_ID: 30<br>COM_ID: 10836570<br>RCH_CODE: 12100302000095<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 3150.35302734000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.02900481223]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -1200,7 +1185,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 30<br>RCH_ID: 31<br>COM_ID: 10836572<br>RCH_CODE: 12100302000096<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 1746.97619629000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.01700820831]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -1263,7 +1248,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 31<br>RCH_ID: 32<br>COM_ID: 10836574<br>RCH_CODE: 12100302000097<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 3692.59667969000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.03566964765]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -1334,7 +1319,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 32<br>RCH_ID: 33<br>COM_ID: 10836576<br>RCH_CODE: 12100302000098<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 2243.15893555000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.02173443452]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -1399,7 +1384,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 33<br>RCH_ID: 34<br>COM_ID: 10836578<br>RCH_CODE: 12100302000099<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 1098.02917480000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.01094919944]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -1449,7 +1434,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 34<br>RCH_ID: 35<br>COM_ID: 10836580<br>RCH_CODE: 12100302000100<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 2036.35803223000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.02010133795]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -1508,7 +1493,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 35<br>RCH_ID: 36<br>COM_ID: 10836582<br>RCH_CODE: 12100302000101<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 2044.31958008000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.02072752205]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -1566,7 +1551,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 36<br>RCH_ID: 37<br>COM_ID: 10836584<br>RCH_CODE: 12100302000102<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 2605.21289063000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.02439676227]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -1629,7 +1614,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 37<br>RCH_ID: 38<br>COM_ID: 10836586<br>RCH_CODE: 12100302000103<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 2635.64990234000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.02519060252]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -1691,7 +1676,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 38<br>RCH_ID: 39<br>COM_ID: 10836588<br>RCH_CODE: 12100302000104<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 845.17919921900<br>GNIS_ID: 01374866<br>SHAPE_len: 0.00834988661]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -1744,7 +1729,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 39<br>RCH_ID: 40<br>COM_ID: 10836590<br>RCH_CODE: 12100302000105<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 2148.65722656000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.02083978724]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -1804,7 +1789,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 40<br>RCH_ID: 41<br>COM_ID: 10836592<br>RCH_CODE: 12100302000615<br>RCH_DATE: 19980704<br>LEVEL_: 3<br>METERS: 848.58190918000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.00810101466]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -1854,7 +1839,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 41<br>RCH_ID: 42<br>COM_ID: 10836594<br>RCH_CODE: 12100302000107<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 4941.36181641000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.04781239947]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -1936,7 +1921,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 42<br>RCH_ID: 43<br>COM_ID: 10836596<br>RCH_CODE: 12100302000108<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 509.76031494100<br>GNIS_ID: 01374866<br>SHAPE_len: 0.00476339638]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -1984,7 +1969,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 43<br>RCH_ID: 44<br>COM_ID: 10836598<br>RCH_CODE: 12100302000109<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 710.48437500000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.00724794224]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -2043,7 +2028,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 44<br>RCH_ID: 45<br>COM_ID: 10836600<br>RCH_CODE: 12100302000110<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 2126.90844727000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.02096124903]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -2106,7 +2091,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 45<br>RCH_ID: 46<br>COM_ID: 10836602<br>RCH_CODE: 12100302000111<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 242.90544128400<br>GNIS_ID: 01374866<br>SHAPE_len: 0.00250646702]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -2151,7 +2136,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 46<br>RCH_ID: 47<br>COM_ID: 10836604<br>RCH_CODE: 12100302000112<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 6251.50439453000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.06118235916]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -2260,7 +2245,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 47<br>RCH_ID: 48<br>COM_ID: 10836606<br>RCH_CODE: 12100302000113<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 2358.89257813000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.02300896285]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -2322,7 +2307,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 48<br>RCH_ID: 49<br>COM_ID: 10836608<br>RCH_CODE: 12100302000114<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 2060.60107422000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.02002747839]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -2383,7 +2368,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 49<br>RCH_ID: 50<br>COM_ID: 10836610<br>RCH_CODE: 12100302000115<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 3482.32031250000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.03370106500]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -2462,7 +2447,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 77<br>RCH_ID: 78<br>COM_ID: 10836666<br>RCH_CODE: 12100302000159<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 131.93728637700<br>GNIS_ID: 01374866<br>SHAPE_len: 0.00133622386]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -2507,7 +2492,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 205<br>RCH_ID: 206<br>COM_ID: 10836924<br>RCH_CODE: 12100302000466<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 2377.75073242000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.02250362830]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -2571,7 +2556,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 281<br>RCH_ID: 282<br>COM_ID: 10837076<br>RCH_CODE: 12100302000054<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 3762.42968750000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.03581595129]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -2654,7 +2639,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 282<br>RCH_ID: 283<br>COM_ID: 10837078<br>RCH_CODE: 12100302000055<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 6026.18261719000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.05919118148]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -2732,7 +2717,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 283<br>RCH_ID: 284<br>COM_ID: 10837080<br>RCH_CODE: 12100302000056<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 995.04211425800<br>GNIS_ID: 01374866<br>SHAPE_len: 0.00910733966]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -2788,7 +2773,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 284<br>RCH_ID: 285<br>COM_ID: 10837082<br>RCH_CODE: 12100302000058<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 635.78558349600<br>GNIS_ID: 01374866<br>SHAPE_len: 0.00586618958]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -2835,7 +2820,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 285<br>RCH_ID: 286<br>COM_ID: 10837084<br>RCH_CODE: 12100302000059<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 2881.64453125000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.02811444600]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -2892,7 +2877,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 286<br>RCH_ID: 287<br>COM_ID: 10837086<br>RCH_CODE: 12100302000060<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 2348.14404297000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.02269931341]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -2947,7 +2932,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 291<br>RCH_ID: 292<br>COM_ID: 10837096<br>RCH_CODE: 12100302000065<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 6101.83496094000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.05851164365]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -3044,7 +3029,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 292<br>RCH_ID: 293<br>COM_ID: 10837098<br>RCH_CODE: 12100302000614<br>RCH_DATE: 19980704<br>LEVEL_: 3<br>METERS: 3902.39086914000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.03823396183]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -3119,7 +3104,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 381<br>RCH_ID: 382<br>COM_ID: 10837276<br>RCH_CODE: 12100302000613<br>RCH_DATE: 19980704<br>LEVEL_: 3<br>METERS: 3148.61425781000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.03091168174]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -3199,7 +3184,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 382<br>RCH_ID: 383<br>COM_ID: 10837278<br>RCH_CODE: 12100302000002<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 2822.94995117000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.02706750698]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -3279,7 +3264,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 383<br>RCH_ID: 384<br>COM_ID: 10837280<br>RCH_CODE: 12100302000003<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 3231.90502930000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.03095142501]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -3367,7 +3352,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 385<br>RCH_ID: 386<br>COM_ID: 10837284<br>RCH_CODE: 12100302000005<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 3183.33154297000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.03105682883]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -3451,7 +3436,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 392<br>RCH_ID: 393<br>COM_ID: 10837300<br>RCH_CODE: 12100302000027<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 4947.28076172000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.04763676978]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -3562,7 +3547,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 393<br>RCH_ID: 394<br>COM_ID: 10837302<br>RCH_CODE: 12100302000028<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 5506.37011719000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.05409207427]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -3683,7 +3668,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 394<br>RCH_ID: 395<br>COM_ID: 10837304<br>RCH_CODE: 12100302000029<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 10903.47070310000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.10565095651]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -3867,7 +3852,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 402<br>RCH_ID: 403<br>COM_ID: 10837320<br>RCH_CODE: 12100302000037<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 757.16253662100<br>GNIS_ID: 01374866<br>SHAPE_len: 0.00759516807]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -3920,7 +3905,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 403<br>RCH_ID: 404<br>COM_ID: 10837322<br>RCH_CODE: 12100302000038<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 14604.30664060000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.13990400494]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -4132,7 +4117,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 404<br>RCH_ID: 405<br>COM_ID: 10837324<br>RCH_CODE: 12100302000039<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 572.33227539100<br>GNIS_ID: 01374866<br>SHAPE_len: 0.00549700048]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -4185,7 +4170,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 405<br>RCH_ID: 406<br>COM_ID: 10837326<br>RCH_CODE: 12100302000040<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 3826.53540039000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.03747941087]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -4279,7 +4264,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 410<br>RCH_ID: 411<br>COM_ID: 10837336<br>RCH_CODE: 12100302000045<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 6775.12988281000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.06588664861]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -4417,7 +4402,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 411<br>RCH_ID: 412<br>COM_ID: 10837338<br>RCH_CODE: 12100302000046<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 22507.60156250000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.21890093095]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -4688,7 +4673,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 412<br>RCH_ID: 413<br>COM_ID: 10837340<br>RCH_CODE: 12100302000047<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 7340.19921875000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.07021331825]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -4792,7 +4777,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 413<br>RCH_ID: 414<br>COM_ID: 10837342<br>RCH_CODE: 12100302000048<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 778.48272705100<br>GNIS_ID: 01374866<br>SHAPE_len: 0.00718933642]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -4842,7 +4827,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 414<br>RCH_ID: 415<br>COM_ID: 10837344<br>RCH_CODE: 12100302000049<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 3962.23168945000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.03803976249]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -4922,7 +4907,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 415<br>RCH_ID: 416<br>COM_ID: 10837346<br>RCH_CODE: 12100302000050<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 3216.13940430000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.03145553559]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -4997,7 +4982,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 416<br>RCH_ID: 417<br>COM_ID: 10837348<br>RCH_CODE: 12100302000051<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 7108.76904297000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.06721356137]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -5116,7 +5101,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 417<br>RCH_ID: 418<br>COM_ID: 10837350<br>RCH_CODE: 12100302000052<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 4446.35009766000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.04312976088]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -5205,7 +5190,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 418<br>RCH_ID: 419<br>COM_ID: 10837352<br>RCH_CODE: 12100302000053<br>RCH_DATE: 19970529<br>LEVEL_: 3<br>METERS: 2368.64916992000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.02363517900]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -5272,7 +5257,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 559<br>RCH_ID: 560<br>COM_ID: 10837634<br>RCH_CODE: 12100302000601<br>RCH_DATE: 19980704<br>LEVEL_: 3<br>METERS: 2241.69848633000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.02181698156]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -5349,7 +5334,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 566<br>RCH_ID: 567<br>COM_ID: 10837648<br>RCH_CODE: 12100302000608<br>RCH_DATE: 19980704<br>LEVEL_: 3<br>METERS: 954.37872314500<br>GNIS_ID: 01374866<br>SHAPE_len: 0.00926593212]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
@@ -5406,7 +5391,7 @@
     <Placemark>
       <name>Medina River</name>
       <description><![CDATA[description: <br>RCH_: 567<br>RCH_ID: 568<br>COM_ID: 10837650<br>RCH_CODE: 12100302000609<br>RCH_DATE: 19980704<br>LEVEL_: 3<br>METERS: 2884.58544922000<br>GNIS_ID: 01374866<br>SHAPE_len: 0.02736743631]]></description>
-      <styleUrl>#line-0288D1-1200</styleUrl>
+      <styleUrl>#river</styleUrl>
       <ExtendedData>
         <Data name="description">
           <value/>
