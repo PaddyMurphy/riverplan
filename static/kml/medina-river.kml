@@ -15,7 +15,7 @@
 <Folder><name>Medina-river</name>
   <Placemark>
 	<name>Medina River</name>
-	<styleUrl>kml-styles.kml#river</styleUrl>
+	<styleUrl>https://mountaindrawn.com/riverplan/static/kml/kml-styles.kml#river</styleUrl>
 	<Style><PolyStyle><fill>0</fill></PolyStyle></Style>
 	<ExtendedData><SchemaData schemaUrl="#MajorRivers_dd83">
 		<SimpleData name="RCH_">1</SimpleData>

@@ -6,7 +6,7 @@
     <Style id="river">
       <LineStyle>
         <color>770000FF</color>
-        <outline>0</outline>
+        <width>1</width>
       </LineStyle>
     </Style>
 
