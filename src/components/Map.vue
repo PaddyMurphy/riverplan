@@ -11,37 +11,38 @@ TODO:
 <template>
   <div class="map-view">
     <div class="map-container">
-      <map-controls
-        :showKmlLayer="showKmlLayer"
-        v-on:toggleKml="toggleKml"
-      />
       <div id="gmap"></div>
     </div><!-- END map-container -->
     <div class="info-container">
-      info
+      <map-river-info
+        :mapRivers="mapRivers"
+        :currentRiver="currentRiver"
+      />
     </div>
   </div>
 </template>
 
 <script>
 import mapStyles from '@/components/mapStyles.json'
-import MapControls from '@/components/MapControls';
+import mapRivers from '@/mapRivers.json'
+import MapRiverInfo from '@/components/MapRiverInfo';
 import loadGoogleMapsAPI from 'load-google-maps-api';
 
 export default {
   name: 'mapview',
   data () {
     return {
-      key: 'AIzaSyA1fV5RautETdjZsTMpClgqHKIgMa8WXPI',
       center: {lat: 31.96, lng: -99.90}, // Texas
+      currentRiver: undefined,
+      key: 'AIzaSyA1fV5RautETdjZsTMpClgqHKIgMa8WXPI',
+      kmlData: undefined,
+      kmlLayer: 'http://waterwatch.usgs.gov/?m=real&w=kml&regions=tx',
+      mapRivers: mapRivers.data,
       mapStyles: mapStyles.styles,
       mapType: 'terrain',
-      kmlLayer: 'http://waterwatch.usgs.gov/?m=real&w=kml&regions=tx',
-      kmlData: undefined,
+      selected: '',
       showKmlLayer: true,
-      zoom: 6, // TODO: lower for mobile
-      showKml: true,
-      selected: ''
+      zoom: 6 // TODO: lower for mobile
     }
   },
   mounted: function () {
@@ -50,7 +51,7 @@ export default {
     vm.$once(vm.loadGoogleMaps());
   },
   components: {
-    'map-controls': MapControls
+    'map-river-info': MapRiverInfo
   },
   watch: {
     '$route' (to, from) {
@@ -75,19 +76,59 @@ export default {
         preserveViewport: true
       });
 
-      // NOTE: order matters, keep rivers below data layer
-      // eslint-disable-next-line
-      var kmlRiverData = new window.google.maps.KmlLayer({
-        url: 'https://mountaindrawn.com/riverplan/static/kml/medina-river.kml',
-        map: window.gmap,
-        suppressInfoWindows: true,
-        preserveViewport: true
+      // vm.kmlData.addListener('click', function (kmlEvent) {
+      //   var text = kmlEvent.featureData;
+      //   console.log(text);
+      // });
+    },
+    displayGeoJson: function () {
+      var vm = this;
+
+      vm.mapRivers.forEach(function (d, i) {
+        if (d.url) {
+          window.gmap.data.loadGeoJson(d.url);
+        }
       });
 
-      vm.kmlData.addListener('click', function (kmlEvent) {
-        var text = kmlEvent.featureData;
-        console.log(text);
+      window.gmap.data.setStyle({
+        strokeColor: 'blue',
+        strokeWeight: 1.5,
+        strokeOpacity: 0.8,
+        zIndex: 0
       });
+
+      window.gmap.data.addListener('mouseover', function (e) {
+        var name = e.feature.getProperty('name');
+        // console.log(name);
+        // enlarge line
+        window.gmap.data.revertStyle();
+        window.gmap.data.overrideStyle(e.feature, {strokeWeight: 5});
+        // set currentRiver
+        vm.currentRiver = name;
+      });
+      // reset stroke on mouseout
+      window.gmap.data.addListener('mouseout', function (e) {
+        window.gmap.data.revertStyle();
+      });
+      // zoom in when clicked
+      window.gmap.data.addListener('click', function (e) {
+        var bounds = new window.google.maps.LatLngBounds();
+        vm.processPoints(e.feature.getGeometry(), bounds.extend, bounds);
+        window.gmap.fitBounds(bounds);
+      })
+    },
+    processPoints: function (geometry, callback, thisArg) {
+      const vm = this;
+
+      if (geometry instanceof window.google.maps.LatLng) {
+        callback.call(thisArg, geometry);
+      } else if (geometry instanceof window.google.maps.Data.Point) {
+        callback.call(thisArg, geometry.get());
+      } else {
+        geometry.getArray().forEach(function (g) {
+          vm.processPoints(g, callback, thisArg);
+        });
+      }
     },
     hideKmlLayer: function () {
       this.kmlData.setMap(null);
@@ -112,11 +153,55 @@ export default {
         zoom: vm.zoom,
         center: vm.center,
         styles: vm.mapStyles,
-        mapTypeId: vm.mapType
+        mapTypeId: vm.mapType,
+        fullscreenControl: true
       });
+
+      vm.displayGeoJson();
+
       // vm.setGoogleMapEvents();
       if (vm.showKmlLayer) {
         vm.displayKmlLayer();
+        vm.createKmlButton();
+      }
+    },
+    createKmlButton: function () {
+      var vm = this;
+      var customControlDiv = document.createElement('div');
+      // eslint-disable-next-line
+      var customControl = new CustomControl(customControlDiv, window.gmap);
+
+      customControlDiv.index = 1;
+      window.gmap.controls[window.google.maps.ControlPosition.TOP_RIGHT].push(customControlDiv);
+
+      function CustomControl (controlDiv, map) {
+        // Set CSS for the control border
+        var controlUI = document.createElement('div');
+        controlUI.style.backgroundColor = '#fff';
+        controlUI.style.borderStyle = 'solid';
+        controlUI.style.borderWidth = '1px';
+        controlUI.style.borderColor = '#ccc';
+        controlUI.style.height = '29px';
+        controlUI.style.margin = '10px 10px 0 0';
+        controlUI.style.padding = '5px';
+        controlUI.style.cursor = 'pointer';
+        controlUI.style.textAlign = 'center';
+        controlUI.title = 'Click to toggle the guages';
+        controlDiv.appendChild(controlUI);
+
+        // Set CSS for the control interior
+        var controlText = document.createElement('div');
+        controlText.style.fontFamily = 'Arial,sans-serif';
+        controlText.style.fontSize = '10px';
+        controlText.style.color = '#565656';
+        controlText.style.marginTop = '3px';
+        controlText.innerHTML = 'Toggle Gauges';
+        controlUI.appendChild(controlText);
+
+        // Setup the click event listeners
+        window.google.maps.event.addDomListener(controlUI, 'click', function () {
+          vm.toggleKml();
+        });
       }
     },
     setGoogleMapEvents: function () {}
@@ -134,7 +219,7 @@ export default {
   flex: 1 1 auto;
 }
 .info-container {
-  flex: 0 1 20%;
+  flex: 0 1 300px;
 }
 #gmap {
   width: 100%;

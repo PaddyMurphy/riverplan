@@ -1,40 +1,66 @@
 {"data": [
 	{
+		"id": "big-cypress-bayou",
 		"name": "Big Cyrpress Bayou",
 		"description": "",
 		"categories": ["fishing","camping","whitewater"]
 	},
 	{
+		"id": "brazos",
 		"name": "Brazos River",
 		"description": "",
 		"categories": ["fishing","camping","whitewater"]
 	},
 	{
+		"id": "canadian",
 		"name": "Canadian River",
 		"description": "",
 		"categories": ["fishing","camping"]
 	},
 	{
+		"id": "colorado",
 		"name": "Colorado River",
-		"description": "",
-		"categories": ["fishing","camping"]
+		"flowMax": "5000 cfs",
+		"flowMin": "200 cfs",
+		"flowOptimum": "500 - 3,000 cfs",
+		"description": "The Colorado River rises in Dawson County on the Texas-New Mexico border and flows for about 600 miles to the mouth at the Gulf of Mexico at Matagorda Bay through the rolling prairie of the high plains of West Texas, down through the Hill Country, which begins in San Saba County with its gorgeous canyons, then through the Balcones Escarpment near Austin and finally through the lower Hill Country below Austin to the and coastal lowlands that are parts of Texas topography. Along the way is a river that has a huge drainage basin including several other major rivers and many creeks, draws, sloughs and other tributaries, all feeding water into the river on its way down south. Above Austin, the river is dammed to form the series of Highland Lakes - Buchanan, Inks, LBJ, Marble Falls, Travis, Austin and Town Lake.",
+		"categories": ["fishing","camping"],
+		"url": "https://gist.githubusercontent.com/PaddyMurphy/276ceb4accf0bc7cab23c4565b027306/raw/0840fa38c8d8d5a664e628db2ece31c7b44582e4/map-colorado.geojson"
 	},
 	{
+		"id": "guadalupe",
 		"name": "Guadalupe River",
-		"description": "",
-		"categories": ["fishing","camping","whitewater"]
+		"flowMax": "5000 cfs",
+		"flowMin": "150 cfs",
+		"flowOptimum": "500-2,000 cfs",
+		"description": "The Guadalupe is the gem of Texas rivers, offering everything from tame flatwater to challenging Class III rapids and water falls. It is a spring-fed river that flows over a bed of limestone from about 20 miles west of Hunt, in Kerr County, down to a rocky bed toward Canyon Lake in Comal County over a distance of about 82 miles, then another 280-300 miles to San Antonio Bay on the Gulf of Mexico. This report covers the river from its headwaters down to Loop 337 in New Braunfels, including the parts most generally used for recreational activities such as canoeing, kayaking, rafting and tubing on Texas' finest whitewater river.",
+		"categories": ["fishing","camping","whitewater"],
+		"url": "https://gist.githubusercontent.com/PaddyMurphy/4fffd9f80ece7fa27314e8e0fda6aeda/raw/c45ed0a50e73c74b9b4eb74b0e928a203ad9028d/map-guadalupe.geojson"
 	},
 	{
+		"id": "lavaca",
 		"name": "Lavaca River",
 		"description": "",
 		"categories": ["fishing","camping"]
 	},
 	{
+		"id": "medina",
+		"name": "Medina River",
+		"flowMax": "1000 cfs",
+		"flowMin": "125 cfs",
+		"flowOptimum": "250 - 700 cfs",
+		"description": "The Medina River is a short, narrow, beautiful river that is reminescent of the Upper Guadalupe because of the physical nature of its topography. Starting in northwest Bandera County, it winds about 116 miles through Bandera, Medina and Bexar Counties to its confluence with the San Antonio River just southeast of the City of San Antonio. The Medina is a narrow river averaging about 30-40 feet wide and is lined with Bald Cypress trees, though not nearly as many as before the flood of 2002. Nearby, Live Oak and rugged Cedar are abundant. The Medina cuts through limestone bluffs and outcroppings with abundant free-flowing springs to feed the river, especially after heavy rains. With few prominent hazards to fear almost anybody can enjoy this gorgeous river as long as they are prepared for a very tight, technical stream with sharp turns and debris piles. Care should be taken as to which reach of the river to paddle based upon skills and experience.",
+		"categories": ["fishing","camping"],
+		"url": "https://gist.githubusercontent.com/PaddyMurphy/b8b96d94719eea52efcacabe9c229d88/raw/423227a2dd85820505720468fa937285f745d543/map-medina.geojson"
+	},
+	{
+		"id": "neches",
 		"name": "Neches River",
 		"description": "",
 		"categories": ["fishing","camping","whitewater"]
 	},
 	{
+		"id": "nueces",
 		"name": "Nueces River",
 		"description": "",
 		"categories": ["fishing","camping","whitewater"]

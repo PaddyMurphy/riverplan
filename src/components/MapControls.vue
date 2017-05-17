@@ -2,13 +2,13 @@
   <div class="map-controls">
     <button class="btn-kml" @click.prevent="toggleKml">{{ buttonText }} Gauges</button>
 
-    <select v-model="selected" @change="selectBasin" v-if="mapRivers">
+    <!-- <select v-model="selected" @change="selectBasin" v-if="mapRivers">
       <option value="">Rivers</option>
       <option
         v-for="river in mapRivers"
         :value="river.name"
       >{{ river.name }}</option>
-    </select>
+    </select> -->
   </div>
 </template>
 
@@ -54,4 +54,7 @@ export default {
 <style scoped lang="scss">
 @import '../assets/scss/variables.scss';
 
+.map-controls {
+  margin: 0 0 0 $default-padding;
+}
 </style>
