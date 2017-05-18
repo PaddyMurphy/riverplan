@@ -34,17 +34,16 @@ export default {
       required: true
     }
   },
-  computed: {},
   watch: {
     currentRiver: 'getRiverInfo'
   },
   mounted: function () {},
   methods: {
-    getRiverInfo: function (name) {
+    getRiverInfo: function (id) {
       var vm = this;
 
       vm.mapRivers.forEach(function (d, i) {
-        if (d.name === name) {
+        if (d.id === id) {
           vm.name = d.name;
           vm.description = d.description;
           vm.flowMin = d.flowMin;

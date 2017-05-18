@@ -45,8 +45,14 @@ export default {
       zoom: 6 // TODO: lower for mobile
     }
   },
+  computed: {},
   mounted: function () {
     const vm = this;
+
+    // set selected river and fetch if routed from url
+    if (this.$route.name === 'MapUrl') {
+      this.setSelectedRiver(this.$route.params.river);
+    }
 
     vm.$once(vm.loadGoogleMaps());
   },
@@ -62,12 +68,15 @@ export default {
     }
   },
   methods: {
+    setSelectedRiver: function (river) {
+      this.currentRiver = river;
+    },
     toggleKml: function () {
       // toggled from component
       this.showKmlLayer = !this.showKmlLayer;
     },
     displayKmlLayer: function () {
-      var vm = this;
+      const vm = this;
       // eslint-disable-next-line
       vm.kmlData = new window.google.maps.KmlLayer({
         url: vm.kmlLayer,
@@ -77,12 +86,12 @@ export default {
       });
 
       // vm.kmlData.addListener('click', function (kmlEvent) {
-      //   var text = kmlEvent.featureData;
+      //   const text = kmlEvent.featureData;
       //   console.log(text);
       // });
     },
     displayGeoJson: function () {
-      var vm = this;
+      const vm = this;
 
       vm.mapRivers.forEach(function (d, i) {
         if (d.url) {
@@ -98,23 +107,28 @@ export default {
       });
 
       window.gmap.data.addListener('mouseover', function (e) {
-        var name = e.feature.getProperty('name');
-        // console.log(name);
+        const id = e.feature.getProperty('id');
         // enlarge line
         window.gmap.data.revertStyle();
         window.gmap.data.overrideStyle(e.feature, {strokeWeight: 5});
         // set currentRiver
-        vm.currentRiver = name;
+        vm.setSelectedRiver(id);
       });
+
       // reset stroke on mouseout
       window.gmap.data.addListener('mouseout', function (e) {
-        window.gmap.data.revertStyle();
+        // window.gmap.data.revertStyle();
       });
       // zoom in when clicked
       window.gmap.data.addListener('click', function (e) {
-        var bounds = new window.google.maps.LatLngBounds();
+        // TODO: set bounds if routed here
+        const id = e.feature.getProperty('id');
+        let bounds = new window.google.maps.LatLngBounds();
+
         vm.processPoints(e.feature.getGeometry(), bounds.extend, bounds);
         window.gmap.fitBounds(bounds);
+
+        vm.$router.push(id);
       })
     },
     processPoints: function (geometry, callback, thisArg) {
@@ -177,24 +191,13 @@ export default {
       function CustomControl (controlDiv, map) {
         // Set CSS for the control border
         var controlUI = document.createElement('div');
-        controlUI.style.backgroundColor = '#fff';
-        controlUI.style.borderStyle = 'solid';
-        controlUI.style.borderWidth = '1px';
-        controlUI.style.borderColor = '#ccc';
-        controlUI.style.height = '29px';
-        controlUI.style.margin = '10px 10px 0 0';
-        controlUI.style.padding = '5px';
-        controlUI.style.cursor = 'pointer';
-        controlUI.style.textAlign = 'center';
+        controlUI.id = 'btn-toggle-stations'
         controlUI.title = 'Click to toggle the guages';
         controlDiv.appendChild(controlUI);
 
         // Set CSS for the control interior
         var controlText = document.createElement('div');
-        controlText.style.fontFamily = 'Arial,sans-serif';
-        controlText.style.fontSize = '10px';
-        controlText.style.color = '#565656';
-        controlText.style.marginTop = '3px';
+        controlText.id = 'text-toggle-stations'
         controlText.innerHTML = 'Toggle Gauges';
         controlUI.appendChild(controlText);
 
@@ -209,8 +212,31 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style>
+/* unscoped map components */
+#btn-toggle-stations {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  height: 29px;
+  margin: 10px 10px 0 0;
+  padding: 8px 6px 6px;
+  cursor: pointer;
+  text-align: center;
+}
+
+#btn-toggle-stations:hover {
+  background-color: rgb(235, 235, 235);
+}
+
+#text-toggle-gauges {
+  font-family: 'Arial, sans-serif';
+  font-size: 11px;
+  font-color: #565656;
+}
+</style>
+
 <style scoped>
+/* scoped components */
 .map-view {
   display: flex;
   flex-wrap: wrap;

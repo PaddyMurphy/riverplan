@@ -13,6 +13,11 @@ export default new Router({
       component: Map
     },
     {
+      path: '/:river',
+      name: 'MapUrl',
+      component: Map
+    },
+    {
       path: '/riverflow',
       name: 'Riverflow',
       component: Riverflow
