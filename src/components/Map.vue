@@ -104,9 +104,8 @@ export default {
       });
 
       window.gmap.data.setStyle({
-        strokeColor: 'blue',
-        strokeWeight: 1.5,
-        strokeOpacity: 0.8,
+        strokeColor: '#46BCEC',
+        strokeWeight: 2,
         zIndex: 0
       });
 
@@ -190,6 +189,7 @@ export default {
       var customControl = new CustomControl(customControlDiv, window.gmap);
 
       customControlDiv.index = 1;
+
       window.gmap.controls[window.google.maps.ControlPosition.TOP_RIGHT].push(customControlDiv);
 
       function CustomControl (controlDiv, map) {

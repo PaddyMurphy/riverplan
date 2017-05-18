@@ -1,5 +1,5 @@
 <template>
-  <div class="map-river-info" v-show="currentRiver">
+  <div class="map-river-info">
     <h3>{{ name }}</h3>
 
     <div class="flow-rates" v-if="flowMin">
@@ -17,8 +17,8 @@ export default {
   name: 'mapriverinfo',
   data () {
     return {
-      name: undefined,
-      description: undefined,
+      name: 'About Riverplan',
+      description: 'Planning tool for kayaking and canoeing trips. Use the map to check usgs guages and select rivers for more information. Coming features: plot and save routes, map new routes...',
       flowMin: undefined,
       flowMax: undefined,
       flowOptimum: undefined
