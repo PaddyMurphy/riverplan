@@ -138,6 +138,7 @@ export default {
       radioDateType: 'period',
       selected: 'selectRiver',
       selectedText: 'Select a river',
+      selectedId: undefined,
       showSearchOptions: false,
       siteName: '',
       startDate: undefined,
@@ -174,7 +175,6 @@ export default {
     },
     changeRiver: function (value) {
       var vm = this;
-
       this.selected = value;
       // get text from value and set the selected option
       this.options.forEach(function (option, i) {
@@ -230,22 +230,26 @@ export default {
       });
     },
     displayUsgsData: function (response) {
+      const vm = this;
       var values = response.values;
       // the last item in the first object is the last value
       var orderedValues = values[0].value.reverse()[0];
       var date = new Date(orderedValues.dateTime);
 
       // set values
-      this.latestCfs = orderedValues.value;
-      this.siteName = response.sourceInfo.siteName;
-      this.latitude = response.sourceInfo.geoLocation.geogLocation.latitude;
-      this.longitude = response.sourceInfo.geoLocation.geogLocation.longitude;
+      vm.latestCfs = orderedValues.value;
+      vm.siteName = response.sourceInfo.siteName;
+      vm.latitude = response.sourceInfo.geoLocation.geogLocation.latitude;
+      vm.longitude = response.sourceInfo.geoLocation.geogLocation.longitude;
       // timestamp of data
-      this.latestDate = date.toDateString();
-      this.latestTime = date.toLocaleTimeString();
+      vm.latestDate = date.toDateString();
+      vm.latestTime = date.toLocaleTimeString();
+      // set selected
+      vm.selectedId = vm.formatRiverName(vm.selectedText);
+      vm.$router.push('/riverflow/' + vm.selectedId);
 
       // create map link
-      this.mapUrl = this.baseMapUrl + this.latitude + ',+' + this.longitude;
+      vm.mapUrl = vm.baseMapUrl + vm.latitude + ',+' + vm.longitude;
     },
     formatRiverName: function (name) {
       // parse the option text (San Marcos River : Luling)

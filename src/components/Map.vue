@@ -51,7 +51,7 @@ export default {
 
     // set selected river and fetch if routed from url
     if (this.$route.name === 'MapUrl') {
-      this.setSelectedRiver(this.$route.params.river);
+      this.setCurrentRiver(this.$route.params.river);
     }
 
     vm.$once(vm.loadGoogleMaps());
@@ -63,13 +63,17 @@ export default {
     '$route' (to, from) {
       // Call resizePreserveCenter() on all maps
     },
+    currentRiver: 'navigateRiver',
     showKmlLayer: function () {
       this.showKmlLayer ? this.displayKmlLayer() : this.hideKmlLayer();
     }
   },
   methods: {
-    setSelectedRiver: function (river) {
+    setCurrentRiver: function (river) {
       this.currentRiver = river;
+    },
+    navigateRiver: function () {
+      this.$router.push('/river/' + this.currentRiver);
     },
     toggleKml: function () {
       // toggled from component
@@ -112,7 +116,7 @@ export default {
         window.gmap.data.revertStyle();
         window.gmap.data.overrideStyle(e.feature, {strokeWeight: 5});
         // set currentRiver
-        vm.setSelectedRiver(id);
+        vm.setCurrentRiver(id);
       });
 
       // reset stroke on mouseout
@@ -128,7 +132,7 @@ export default {
         vm.processPoints(e.feature.getGeometry(), bounds.extend, bounds);
         window.gmap.fitBounds(bounds);
 
-        vm.$router.push(id);
+        vm.setCurrentRiver(id);
       })
     },
     processPoints: function (geometry, callback, thisArg) {
