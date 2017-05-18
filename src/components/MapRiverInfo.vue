@@ -8,6 +8,8 @@
       <p>Optimum flow: {{ flowOptimum }}</p>
     </div>
 
+    <p v-if="length">Length: {{ length }}</p>
+
     <p>{{ description }}</p>
   </div>
 </template>
@@ -21,7 +23,8 @@ export default {
       description: 'Planning tool for kayaking and canoeing trips. Use the map to check usgs guages and select rivers for more information. Coming features: plot and save routes, map new routes...',
       flowMin: undefined,
       flowMax: undefined,
-      flowOptimum: undefined
+      flowOptimum: undefined,
+      length: undefined
     }
   },
   props: {
@@ -49,6 +52,7 @@ export default {
           vm.flowMin = d.flowMin;
           vm.flowMax = d.flowMax;
           vm.flowOptimum = d.flowOptimum;
+          vm.length = d.length;
         }
       });
     }

@@ -171,7 +171,7 @@ export default {
         center: vm.center,
         styles: vm.mapStyles,
         mapTypeId: vm.mapType,
-        fullscreenControl: true
+        fullscreenControl: false
       });
 
       vm.displayGeoJson();
@@ -243,13 +243,15 @@ export default {
 /* scoped components */
 .map-view {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
 }
 .map-container {
-  flex: 1 1 auto;
+  flex: 2 2 0;
+  min-width: 300px;
 }
 .info-container {
-  flex: 0 1 300px;
+  flex: 1 1 0;
+  min-width: 200px;
 }
 #gmap {
   width: 100%;
