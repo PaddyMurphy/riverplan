@@ -1,21 +1,20 @@
 {"data": [
 	{
-		"id": "big-cypress-bayou",
-		"name": "Big Cyrpress Bayou",
-		"description": "",
-		"categories": ["fishing","camping","whitewater"]
-	},
-	{
 		"id": "brazos",
 		"name": "Brazos River",
-		"description": "",
-		"categories": ["fishing","camping","whitewater"]
+		"flowMax": "5000 cfs",
+		"flowMin": "200 cfs",
+		"flowOptimum": "500 - 3,000 cfs",
+		"description": "The Brazos River forms at the confluence off its Double Mountain Fork, beginning in Lubbock County, and Salt Fork, beginning in Crosby County, then merging in eastern Stonewall County near the Haskell County Line. Navigable flows begin below the Clear Fork confluence in Young County just southwest of Graham. The river is a long, slow flatwater stream that flows south by southeast to the Gulf of Mexico in Brazoria County, near Houston. While the river runs for about 840 miles, this report will detail those navigable sections where people can go to paddle, particularly below Possum Kingdom Dam in Palo Pinto County, Highway 180 near Mineral Wells in Palo Pinto County to FM 1189 near Dennis in Parker County, Mitchell Ford to Brazos Point Crossing in Somervell County, Lake Whitney in Hill County to Waco in McLennan County and the Hidalgo Falls section near Navasota in Brazos and Washington Counties.",
+		"categories": ["fishing","camping","whitewater"],
+		"url": "https://gist.githubusercontent.com/PaddyMurphy/0aa90a6d7641b37b6be0828301dc9ff7/raw/f090af09d4b545462ef696648782d6079063da57/map-brazos.geojson"
 	},
 	{
 		"id": "canadian",
 		"name": "Canadian River",
-		"description": "",
-		"categories": ["fishing","camping"]
+		"description": "eh?",
+		"categories": ["fishing","camping"],
+		"url": "https://gist.githubusercontent.com/PaddyMurphy/dd75a1d64bdc902c8786dd3d420160a9/raw/af12a6c147ed31e6446e6eb3e9ef69fded0c855c/map-canadian.geojson"
 	},
 	{
 		"id": "colorado",
