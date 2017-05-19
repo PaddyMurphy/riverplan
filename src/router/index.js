@@ -31,6 +31,10 @@ export default new Router({
       path: '/riverflow/:river',
       name: 'RiverflowUrl',
       component: Riverflow
+    },
+    {
+      path: '*',
+      redirect: '/'
     }
   ]
 })

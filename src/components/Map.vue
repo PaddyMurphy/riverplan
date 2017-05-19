@@ -88,11 +88,6 @@ export default {
         suppressInfoWindows: false,
         preserveViewport: true
       });
-
-      // vm.kmlData.addListener('click', function (kmlEvent) {
-      //   const text = kmlEvent.featureData;
-      //   console.log(text);
-      // });
     },
     displayGeoJson: function () {
       const vm = this;
@@ -104,6 +99,7 @@ export default {
       });
 
       window.gmap.data.setStyle({
+        clickable: true,
         strokeColor: '#46BCEC',
         strokeWeight: 2,
         zIndex: 0
@@ -118,21 +114,19 @@ export default {
         vm.setCurrentRiver(id);
       });
 
-      // reset stroke on mouseout
-      window.gmap.data.addListener('mouseout', function (e) {
-        // window.gmap.data.revertStyle();
-      });
       // zoom in when clicked
       window.gmap.data.addListener('click', function (e) {
-        // TODO: set bounds if routed here
         const id = e.feature.getProperty('id');
-        let bounds = new window.google.maps.LatLngBounds();
-
-        vm.processPoints(e.feature.getGeometry(), bounds.extend, bounds);
-        window.gmap.fitBounds(bounds);
-
+        vm.fitBounds(e);
         vm.setCurrentRiver(id);
       })
+    },
+    fitBounds: function (object) {
+      const vm = this;
+      let bounds = new window.google.maps.LatLngBounds();
+      // get from currentRiver instead of passing in
+      vm.processPoints(object.feature.getGeometry(), bounds.extend, bounds);
+      window.gmap.fitBounds(bounds);
     },
     processPoints: function (geometry, callback, thisArg) {
       const vm = this;
