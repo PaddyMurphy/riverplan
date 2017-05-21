@@ -12,17 +12,23 @@
         Riverflow
       </router-link>
     </nav>
+    <login v-if="showLogin" />
   </header>
 </template>
 
 <script>
+import Login from '@/components/Login'
 export default {
   name: 'navbar',
   data () {
     return {
       title: 'Riverplan',
-      tagline: 'Texas Edition'
+      tagline: 'Texas Edition',
+      showLogin: false
     }
+  },
+  components: {
+    'login': Login
   },
   computed: {
     isDev: function () {

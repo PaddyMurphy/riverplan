@@ -23,8 +23,8 @@ TODO:
 </template>
 
 <script>
-import mapStyles from '@/components/mapStyles.json'
-import mapRivers from '@/mapRivers.json'
+import mapStyles from '@/components/mapStyles.json';
+import mapRivers from '@/mapRivers.json';
 import MapRiverInfo from '@/components/MapRiverInfo';
 import loadGoogleMapsAPI from 'load-google-maps-api';
 
@@ -42,7 +42,7 @@ export default {
       mapType: 'terrain',
       selected: '',
       showKmlLayer: true,
-      zoom: 6 // TODO: lower for mobile
+      zoom: 6 // TODO: lower for mobile,
     }
   },
   computed: {},

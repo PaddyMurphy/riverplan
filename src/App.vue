@@ -19,8 +19,13 @@ Vue.use(Elementui, { locale });
 
 export default {
   name: 'app',
+  data () {
+    return {}
+  },
   components: {
     'navbar': Navbar
+  },
+  mounted: function () {
   }
 }
 </script>

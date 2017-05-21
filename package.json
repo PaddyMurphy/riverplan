@@ -17,6 +17,7 @@
   "dependencies": {
     "axios": "^0.16.1",
     "element-ui": "^1.2.9",
+    "firebaseui": "^2.0.0",
     "load-google-maps-api": "^1.0.0",
     "node-sass": "^4.5.2",
     "photoswipe": "^4.1.1",
