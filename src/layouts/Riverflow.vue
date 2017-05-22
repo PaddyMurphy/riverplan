@@ -287,7 +287,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="sass">
 // NOTE: webpack tests do not find nested includes
-// @import '../assets/scss/variables.sass';
 @import '../assets/scss/bulma-styles.sass';
 
 .select-river-wrapper
