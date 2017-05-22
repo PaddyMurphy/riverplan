@@ -6,6 +6,7 @@ import Riverflow from '@/layouts/Riverflow'
 Vue.use(Router)
 
 export default new Router({
+  linkExactActiveClass: 'is-active',
   routes: [
     {
       path: '/',

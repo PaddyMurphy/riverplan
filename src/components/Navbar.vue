@@ -1,17 +1,21 @@
 <template>
   <header>
-    <div class="header" v-once>
+    <div class="header is-flex" v-once>
       <h1 class="title">{{ title }}</h1>
       <p class="tagline">{{ tagline }}</p>
     </div>
-    <nav class="nav" v-once>
-      <router-link class="nav-item" to="/">
-        Map
-      </router-link>
-      <router-link class="nav-item" to="/riverflow">
-        Riverflow
-      </router-link>
-    </nav>
+
+    <div class="tabs" v-once>
+      <ul>
+        <router-link tag="li" to="/">
+          <a>Map</a>
+        </router-link>
+
+        <router-link tag="li" to="/riverflow">
+          <a>Riverflow</a>
+        </router-link>
+      </ul>
+    </div>
   </header>
 </template>
 
@@ -38,33 +42,24 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-@import '../assets/scss/variables.scss';
+<style scoped lang="sass">
+@import '../assets/scss/bulma-styles.sass'
 
-.header {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-}
+.header
+  align-items: center
+  justify-content: space-between
 
-:root .title, .tagline {
-  margin: 1em $default-padding;
-}
+.title, .tagline
+  margin: 1rem $default-padding
 
-.title {
-  font-size: 1.2em;
-}
+.title
+  font-size: 1.2rem
 
-.tagline {
-  font-size: 1em;
-}
+.tagline
+  font-size: 1rem
 
-.nav {
-  display: flex;
-  padding: 0.5em $default-padding;
+.tabs li:first-child
+  padding-left: 1rem
 
-  a {
-    margin: 0 0.5em 0 0;
-  }
-}
+
 </style>

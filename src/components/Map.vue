@@ -1,7 +1,5 @@
 <!--
 TODO:
-- fetch usgs river basins
-- overlay rivers shp file
 - select river to focus on river and show details
 - assign descriptions to rivers
 - show recommended flow rates
@@ -9,17 +7,19 @@ TODO:
 - launch google earth web from point
 -->
 <template>
-  <div class="map-view">
+  <section class="section map-view is-flex">
+
     <div class="map-container">
       <div id="gmap"></div>
-    </div><!-- END map-container -->
+    </div>
+
     <div class="info-container">
       <map-river-info
         :mapRivers="mapRivers"
         :currentRiver="currentRiver"
       />
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -235,8 +235,10 @@ export default {
 
 <style lang="sass" scoped>
 /* scoped components */
+// import custom variables
+@import '../assets/scss/bulma-styles.sass'
+
 .map-view
-  display: flex
   flex-flow: row wrap
 
 .map-container

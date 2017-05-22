@@ -97,15 +97,14 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="sass">
   // unable to scope
-  .graph {
-    image-rendering: pixelated;
-    height: auto;
-    width: 100%;
-  }
+  .graph
+    image-rendering: pixelated
+    height: auto
+    width: 100%
 
-  .graph-wrapper {
-    text-align: center;
-  }
+  .graph-wrapper
+    text-align: center
+
 </style>

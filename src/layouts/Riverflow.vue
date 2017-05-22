@@ -1,17 +1,21 @@
 <template>
-  <div class="riverflow">
+  <section class="section riverflow">
 
-    <div class="select-river-wrapper">
-      <select class="select-river" v-model="selected" @change="changeRiver">
-        <option
-          v-for="option in options"
-          :key="option.value"
-          :value="option.value"
-          :label="option.text"
-          :disabled="option.value === '' ? true : false"
-        >
-        </option>
-      </select>
+    <div class="field select-river-wrapper">
+      <p class="control">
+        <span class="select is-fullwidth">
+          <select class="select-river" v-model="selected" @change="changeRiver">
+            <option
+              v-for="option in options"
+              :key="option.value"
+              :value="option.value"
+              :label="option.text"
+              :disabled="option.value === '' ? true : false"
+            >
+            </option>
+          </select>
+        </span>
+      </p>
 
       <div class="graph-options" v-if="showSearchOptions">
           <!-- TODO: enable after adding bulma -->
@@ -50,12 +54,12 @@
             ></el-date-picker> -->
           </label>
       </div>
-    </div> <!-- END select-river-wrapper -->
+    </div> <!-- END field.select-river-wrapper -->
 
     <div class="error" v-if="error">{{ error }}</div>
 
-    <div class="condition-wrapper">
-      <div class="latest-cfs" v-if="latestCfs">
+    <div class="columns condition-wrapper">
+      <div class="column latest-cfs" v-if="latestCfs">
 
         <div class="rate-group">
           <span class="rate">{{ latestCfs }}</span>
@@ -68,11 +72,12 @@
         </div>
       </div>
 
-      <conditions :latestCfs="latestCfs" />
+      <conditions class="column" :latestCfs="latestCfs" />
 
-      <intro :period="period" v-if="!latestCfs" />
+      <intro class="column" :period="period" v-if="!latestCfs" />
 
       <history
+        class="column"
         :latestCfs="latestCfs"
         :siteName="siteName"
         :latestTime="latestTime"
@@ -101,7 +106,7 @@
       <small class="color-value">{{backgroundColor}}</small>
     </footer>
 
-  </div> <!-- END riverflow -->
+  </section> <!-- END riverflow -->
 </template>
 
 <script>
@@ -286,13 +291,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="sass">
-// NOTE: webpack tests do not find nested includes
-@import '../assets/scss/bulma-styles.sass';
-
-.select-river-wrapper
-  display: flex
-  flex-direction: column
-  padding: 0 $default-padding ($default-padding / 2)
+// import custom variables
+@import '../assets/scss/bulma-styles.sass'
 
 .graph-options
   border: 0
@@ -327,13 +327,14 @@ export default {
 
 .condition-wrapper
   background: $conditions-color
-  display: flex
-  flex-wrap: wrap
-  padding: 1em
+  padding-top: $default-padding
 
-  > div
-    flex: 1 1 33.3%
-    padding: 1em
+.columns
+  display: flex;
+  flex-wrap: wrap
+
+.column
+  flex: 1 1 33.3%
 
 .latest-cfs
   text-align: center
@@ -350,11 +351,9 @@ export default {
 
 .rate-abbr
   color: $orange-light
-  font-size: 2em
+  font-size: 2rem
   font-weight: bold
-
-  &[title]
-    border-bottom: 1px dotted
+  text-decoration: none
 
 .time-history
   font-size: 0.8em
@@ -370,8 +369,7 @@ export default {
     display: none !important
 
   .cfs
-    font-size: 0.8em
-    margin-left: -0.20em
+    font-size: 0.8rem
 
 .history-title
   margin: 0 0 .25em

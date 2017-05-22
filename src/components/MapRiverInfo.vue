@@ -1,6 +1,6 @@
 <template>
-  <div class="map-river-info">
-    <h3>{{ name }}</h3>
+  <div class="content map-river-info">
+    <h2>{{ name }}</h2>
 
     <div class="flow-rates" v-if="flowMin">
       <p>Minimum flow: {{ flowMin }}</p>
@@ -60,10 +60,13 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-@import '../assets/scss/variables.scss';
+<style scoped lang="sass">
+@import '../assets/scss/bulma-styles.sass'
 
-.map-river-info {
-  padding: 0 2em 2em
-}
+.map-river-info
+  padding: 0 0 0 $default-padding
+
+.flow-rates
+  padding-bottom: 1rem
+
 </style>

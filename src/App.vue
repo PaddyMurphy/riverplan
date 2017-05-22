@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <navbar />
-    <keep-alive>
-      <router-view></router-view>
-    </keep-alive>
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
   </div>
 </template>
 
@@ -25,14 +25,15 @@ export default {
 </script>
 
 <style lang="sass">
+// import initial variables
+@import '../node_modules/bulma/sass/utilities/initial-variables'
+// import custom variables
+@import 'assets/scss/bulma-styles.sass'
+// Import the rest of Bulma
+@import '../node_modules/bulma/bulma'
+
 html,
 body
   height: 100%
-
-// @import 'assets/scss/bulma-styles.scss'
-#app
-  font-family: 'Avenir', Helvetica, Arial, sans-serif
-  -webkit-font-smoothing: antialiased
-  -moz-osx-font-smoothing: grayscale
 
 </style>
