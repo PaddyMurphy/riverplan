@@ -18,7 +18,7 @@ export default {
   props: {
     latestCfs: {
       type: String,
-      required: true
+      required: false
     }
   },
   watch: {

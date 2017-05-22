@@ -2,56 +2,54 @@
   <div class="riverflow">
 
     <div class="select-river-wrapper">
-      <!-- TODO: add filterable -->
-      <el-select class="select-river" v-model="selected" @change="changeRiver" :placeholder="selectedText">
-        <el-option
+      <select class="select-river" v-model="selected" @change="changeRiver">
+        <option
           v-for="option in options"
           :key="option.value"
           :value="option.value"
           :label="option.text"
           :disabled="option.value === '' ? true : false"
         >
-        </el-option>
-      </el-select>
+        </option>
+      </select>
 
-      <el-collapse class="graph-options">
-        <el-collapse-item title="Search options" name="1">
+      <div class="graph-options" v-if="showSearchOptions">
+          <!-- TODO: enable after adding bulma -->
           <div class="graph-controls-menu">
-              <el-radio id="radio-dates-period" label="period" v-model="radioDateType">Search by number of days</el-radio>
+              <input id="radio-dates-period" type="radio" label="period" v-model="radioDateType">Search by number of days</input>
 
-              <el-input-number
+              <input
                 class="graph-period"
                 type="number"
                 :min="7"
                 :max="90"
                 v-model="period"
                 v-show="radioDateType === 'period'"
-              ></el-input-number>
+              />
 
-              <el-radio id="radio-dates-date" label="date" v-model="radioDateType">Search by a date range</el-radio>
+              <input id="radio-dates-date" type="radio" label="date" v-model="radioDateType">Search by a date range</input>
           </div>
 
           <label class="graph-control-label" v-show="radioDateType === 'date'">
             <span class="label-name">start date</span>
             <!-- TODO: implement disabledDate -->
-            <el-date-picker
+            <!-- <el-date-picker
               class="graph-start"
               type="date"
               v-model="startDate"
               placeholder="Pick a start date"
-            ></el-date-picker>
+            ></el-date-picker> -->
           </label>
 
           <label class="graph-control-label" v-show="radioDateType === 'date'">
             <span class="label-name">end date</span>
-            <el-date-picker
+            <!-- <el-date-picker
               class="graph-end"
               type="date"
               v-model="endDate"
-            ></el-date-picker>
+            ></el-date-picker> -->
           </label>
-        </el-collapse-item>
-      </el-collapse>
+      </div>
     </div> <!-- END select-river-wrapper -->
 
     <div class="error" v-if="error">{{ error }}</div>
@@ -99,7 +97,6 @@
 
     <footer>
       created by <a href="//mountaindrawn.com">mountaindrawn.com</a>
-      <!-- <el-color-picker v-model="backgroundColor" @change="selectBackground"></el-color-picker> -->
       <input type="color" class="color-picker" @change="selectBackground" value="#E0E4CC">
       <small class="color-value">{{backgroundColor}}</small>
     </footer>
@@ -125,9 +122,9 @@ export default {
       endDate: new Date().toISOString().split('T')[0], // todays date YYYY-MM-DD
       error: undefined,
       graphType: '00060', // defaults to cfs
-      latestCfs: '',
-      latestDate: '',
-      latestTime: '',
+      latestCfs: undefined,
+      latestDate: undefined,
+      latestTime: undefined,
       latitude: undefined,
       loading: false,
       loadingEl: document.querySelector('.loading'),
@@ -138,11 +135,15 @@ export default {
       radioDateType: 'period',
       selected: 'selectRiver',
       selectedText: 'Select a river',
-      selectedId: undefined,
       showSearchOptions: false,
-      siteName: '',
+      siteName: undefined,
       startDate: undefined,
       valueBaseUrl: 'https://waterservices.usgs.gov/nwis/iv/'
+    }
+  },
+  computed: {
+    selectedId: function () {
+      return this.formatRiverName(this.selectedText);
     }
   },
   components: {
@@ -153,7 +154,6 @@ export default {
     'history': History
   },
   mounted: function () {
-    // var vm = this;
     // set selected river and fetch if routed from url
     if (this.$route.name === 'RiverflowUrl') {
       this.setSelectedRiver(this.$route.params.river);
@@ -170,20 +170,13 @@ export default {
       this.options.forEach(function (option, i) {
         if (vm.formatRiverName(option.text) === river) {
           vm.selected = option.value;
-        }
-      });
-    },
-    changeRiver: function (value) {
-      var vm = this;
-      this.selected = value;
-      // get text from value and set the selected option
-      this.options.forEach(function (option, i) {
-        if (option.value === value) {
           vm.selectedText = option.text;
         }
       });
-      // clear filterable input
-      vm.$el.querySelector('.el-input__inner').value = '';
+    },
+    changeRiver: function (e) {
+      this.selected = this.options[e.target.selectedIndex].value;
+      this.selectedText = this.options[e.target.selectedIndex].text;
     },
     toggleSearchOptions: function () {
       if (this.showSearchOptions) {
@@ -241,11 +234,12 @@ export default {
       vm.siteName = response.sourceInfo.siteName;
       vm.latitude = response.sourceInfo.geoLocation.geogLocation.latitude;
       vm.longitude = response.sourceInfo.geoLocation.geogLocation.longitude;
+
       // timestamp of data
       vm.latestDate = date.toDateString();
       vm.latestTime = date.toLocaleTimeString();
+
       // set selected
-      vm.selectedId = vm.formatRiverName(vm.selectedText);
       vm.$router.push('/riverflow/' + vm.selectedId);
 
       // create map link
@@ -291,180 +285,138 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss">
-  // NOTE: webpack tests do not find nested includes
-  @import '../assets/scss/variables.scss';
-  @import '../../node_modules/element-ui/lib/theme-default/index.css';
+<style lang="sass">
+// NOTE: webpack tests do not find nested includes
+// @import '../assets/scss/variables.sass';
+@import '../assets/scss/bulma-styles.sass';
 
-  .select-river-wrapper {
-    display: flex;
-    flex-direction: column;
-    padding: 0 $default-padding $default-padding / 2;
-  }
+.select-river-wrapper
+  display: flex
+  flex-direction: column
+  padding: 0 $default-padding ($default-padding / 2)
 
-  .graph-options {
-    border: 0;
-    margin-top: 0;
-    // override default styles
-    .el-collapse-item__header,
-    .el-collapse-item__wrap {
-      background: none;
-      border: 0;
-    }
-    // move 'Search options' to the right
-    .el-collapse-item__header {
-      display: flex;
-      flex-direction: row-reverse;
-      align-items: center;
-    }
+.graph-options
+  border: 0
+  margin-top: 0
 
-    .el-collapse-item__header__arrow {
-      margin: 0 0.8em 0 0.5em;
-    }
+.graph-controls-menu
+  display: flex
+  flex-wrap: wrap
 
-    .el-radio__label {
-      cursor: pointer;
-    }
-  }
+.graph-control-label
+  display: block
+  margin: 0 0 1em
 
-  .graph-controls-menu {
-    display: flex;
-    flex-wrap: wrap;
-  }
+.graph-period
+  transform: translateY(-0.3em)
 
-  .graph-control-label {
-    display: block;
-    margin: 0 0 1em;
-  }
+.graph-loading
+  padding: 1em 0
 
-  .graph-period {
-    transform: translateY(-0.3em);
-  }
+#radio-dates-period,
+#radio-dates-date
+  cursor: pointer
+  display: flex
 
-  .graph-loading {
-    padding: 1em 0;
-  }
+  // keeps aligned to radio
+  flex: 1 1 50%
+  margin: 0 auto 0.5em
 
-  #radio-dates-period,
-  #radio-dates-date {
-    cursor: pointer;
-    display: flex; // keeps aligned to radio
-    flex: 1 1 50%;
-    margin: 0 auto 0.5em;
-  }
+.label-name
+  display: inline-block
+  width: 8em
 
-  .label-name {
-    display: inline-block;
-    width: 8em;
-  }
+.condition-wrapper
+  background: $conditions-color
+  display: flex
+  flex-wrap: wrap
+  padding: 1em
 
-  .condition-wrapper {
-    background: $conditions-color;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 1em;
+  > div
+    flex: 1 1 33.3%
+    padding: 1em
 
-    > div {
-      flex: 1 1 33.3%;
-      padding: 1em
-    }
-  }
+.latest-cfs
+  text-align: center
 
-  .latest-cfs {
-    text-align: center;
-  }
+.rate-group
+  align-items: baseline
+  display: flex
+  justify-content: center
 
-  .rate-group {
-    align-items: baseline;
-    display: flex;
-    justify-content: center;
-  }
+.rate
+  color: $orange
+  font-weight: bold
+  font-size: 4em
 
-  .rate {
-    color: $orange;
-    font-weight: bold;
-    font-size: 4em;
-  }
+.rate-abbr
+  color: $orange-light
+  font-size: 2em
+  font-weight: bold
 
-  .rate-abbr {
-    color: $orange-light;
-    font-size: 2em;
-    font-weight: bold;
+  &[title]
+    border-bottom: 1px dotted
 
-    &[title] {
-      border-bottom: 1px dotted;
-    }
-  }
+.time-history
+  font-size: 0.8em
+  margin: 0
+  padding: 0
 
-  .time-history {
-    font-size: 0.8em;
-    margin: 0;
-    padding: 0;
+  li
+    list-style: none
+    padding: 0 0 .25em
 
-    li {
-      list-style: none;
-      padding: 0 0 .25em;
-    }
-    // hide the first once since the data is already displayed
-    li:first-child {
-      display: none !important;
-    }
+  // hide the first once since the data is already displayed
+  li:first-child
+    display: none !important
 
-    .cfs {
-      font-size: 0.8em;
-      margin-left: -0.20em;
-    }
-  }
+  .cfs
+    font-size: 0.8em
+    margin-left: -0.20em
 
-  .history-title {
-    margin: 0 0 .25em;
-  }
+.history-title
+  margin: 0 0 .25em
 
-  footer {
-    font-size: 0.8em;
-    padding: $default-padding 0;
-    text-align: center;
-  }
+footer
+  font-size: 0.8em
+  padding: $default-padding 0
+  text-align: center
 
-  .color-picker {
-    width: 20px;
-    height: 20px;
-    padding: 0;
-    border: 0;
-    border-radius: 50%;
-    opacity: 0.3;
-    transition: opacity 0.25s;
+.color-picker
+  width: 20px
+  height: 20px
+  padding: 0
+  border: 0
+  border-radius: 50%
+  opacity: 0.3
+  transition: opacity 0.25s
 
-    &:hover {
-      opacity: 1;
-    }
-  }
+  &:hover
+    opacity: 1
 
-  .loading {
-    align-items: center;
-    background: rgba(255,255,255,0.9);
-    display: none;
-    font-size: 1.2em;
-    justify-content: center;
-    padding-bottom: $default-padding;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: 999;
-  }
+.loading
+  align-items: center
+  background: rgba(255, 255, 255, 0.9)
+  display: none
+  font-size: 1.2em
+  justify-content: center
+  padding-bottom: $default-padding
+  position: fixed
+  width: 100%
+  height: 100%
+  z-index: 999
 
-  .error {
-    font-size: 1.2em;
-    text-align: center;
-    padding: $default-padding;
-    width: 100%;
-  }
+.error
+  font-size: 1.2em
+  text-align: center
+  padding: $default-padding
+  width: 100%
 
-  // transitions
-  .fade-enter-active, .fade-leave-active {
-    transition: all 0.35s;
-  }
-  .fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
-    opacity: 0;
-  }
+// transitions
+.fade-enter-active, .fade-leave-active
+  transition: all 0.35s
+
+.fade-enter, .fade-leave-to
+  opacity: 0
+
 </style>

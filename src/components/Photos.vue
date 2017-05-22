@@ -161,19 +161,19 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-  @import '../../node_modules/photoswipe/dist/photoswipe.css';
-  @import '../../node_modules/photoswipe/dist/default-skin/default-skin.css';
+<style scoped lang="sass">
+  @import '../../node_modules/photoswipe/dist/photoswipe.css'
+  @import '../../node_modules/photoswipe/dist/default-skin/default-skin.css'
 
-  .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  .gallery a {
-    // display: inline-block;
-    width: 150px;
-    height: 150px;
-    margin: 0 auto 0.5em;
-  }
+  .gallery
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+
+  .gallery a
+    // display: inline-block
+    width: 150px
+    height: 150px
+    margin: 0 auto 0.5em
+
 </style>

@@ -8,6 +8,8 @@ import router from './router'
 Vue.use(VueFire);
 
 Vue.config.productionTip = false
+// global event bus
+window.Event = new Vue();
 
 /* eslint-disable no-new */
 new Vue({

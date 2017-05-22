@@ -24,19 +24,19 @@ export default {
   props: {
     latestCfs: {
       type: String,
-      required: true
+      required: false
     },
     siteName: {
       type: String,
-      required: true
+      required: false
     },
     latestTime: {
       type: String,
-      required: true
+      required: false
     },
     latestDate: {
       type: String,
-      required: true
+      required: false
     }
   },
   mounted: function () {

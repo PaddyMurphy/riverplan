@@ -233,22 +233,22 @@ export default {
 }
 </style>
 
-<style scoped>
+<style lang="sass" scoped>
 /* scoped components */
-.map-view {
-  display: flex;
-  flex-flow: row wrap;
-}
-.map-container {
-  flex: 2 2 0;
-  min-width: 300px;
-}
-.info-container {
-  flex: 1 1 0;
-  min-width: 200px;
-}
-#gmap {
-  width: 100%;
-  height: 80vh;
-}
+.map-view
+  display: flex
+  flex-flow: row wrap
+
+.map-container
+  flex: 2 2 0
+  min-width: 300px
+
+.info-container
+  flex: 1 1 0
+  min-width: 200px
+
+#gmap
+  width: 100%
+  height: 80vh
+
 </style>
