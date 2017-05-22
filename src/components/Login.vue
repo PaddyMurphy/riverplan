@@ -23,7 +23,9 @@
 </template>
 
 <script>
-import Firebase from 'firebase';
+// TODO: webpack throws error in production
+//       error: Unexpected token )
+// import Firebase from 'firebase';
 
 let usersRef;
 // eslint-disable-next-line

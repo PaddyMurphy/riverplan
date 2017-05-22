@@ -12,12 +12,10 @@
         Riverflow
       </router-link>
     </nav>
-    <login v-if="showLogin" />
   </header>
 </template>
 
 <script>
-import Login from '@/components/Login'
 export default {
   name: 'navbar',
   data () {
@@ -27,9 +25,7 @@ export default {
       showLogin: false
     }
   },
-  components: {
-    'login': Login
-  },
+  components: {},
   computed: {
     isDev: function () {
       if (typeof (process.env.NODE_ENV) === 'string') {
