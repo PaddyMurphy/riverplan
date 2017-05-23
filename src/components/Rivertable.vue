@@ -4,6 +4,7 @@ Rivertable: display all desirable rivers and creeks
 - Color rows: use default conditions unless overridden
 - Click row: expand below with river details
 - add fontawesome
+- compare latest cfs with oldest to determine rising or falling
 -->
 
 <template>
@@ -32,7 +33,10 @@ Rivertable: display all desirable rivers and creeks
       <tbody>
         <tr v-for="river in riversFormatted" :class="river.level">
           <th>{{ river.name }}</th>
-          <td>{{ river.cfs }}</td>
+          <td>
+            {{ river.cfs }}
+            <span :class="river.rising ? 'arrow-up' : 'arrow-down'"></span>
+          </td>
           <td>
             <span class="date">{{ river.date }}</span>
             <span class="time">{{ river.time }}</span>
@@ -135,24 +139,31 @@ export default {
     displayUsgsData: function (response) {
       const vm = this;
       let river = {};
-      let orderedValues;
+      let oldestValue;
+      let currentValue;
+      let rising;
       let date;
       let geo;
 
       response.forEach(function (d, i) {
         // the last item is the latest value
-        orderedValues = d.values[0].value.reverse()[0];
-        date = new Date(orderedValues.dateTime);
-        geo = d.sourceInfo.geoLocation.geogLocation;
+        oldestValue = d.values[0].value[0].value;
+        // TODO: don't reverse... order makes a difference here
+        currentValue = d.values[0].value.reverse()[0];
 
+        date = new Date(currentValue.dateTime);
+        geo = d.sourceInfo.geoLocation.geogLocation;
+        rising = (parseInt(currentValue.value, 10) > parseInt(oldestValue, 10));
         river = {
           'name': d.sourceInfo.siteName,
           'location': vm.baseMapUrl + geo.latitude + ',+' + geo.longitude,
           'date': date.toDateString(),
           'time': date.toLocaleTimeString(),
-          'cfs': orderedValues.value,
-          'condition': vm.getConditions(orderedValues.value).condition,
-          'level': vm.getConditions(orderedValues.value).level
+          'cfs': currentValue.value,
+          'oldCfs': oldestValue,
+          'condition': vm.getConditions(currentValue.value).condition,
+          'level': vm.getConditions(currentValue.value).level,
+          'rising': rising
         }
 
         vm.riversFormatted.push(river);
@@ -216,9 +227,9 @@ export default {
 .tools
   margin-bottom: 1rem
 
-// disable row hover
-.table tr:hover
-  background-color: none
+.date,
+.time
+  font-size: 0.8rem
 
 // table row colors
 .level-0
@@ -241,5 +252,22 @@ export default {
 
 .level-6
   background-color: lighten($green, 10%)
+
+// arrows
+.arrow-up
+  width: 0
+  height: 0
+  display: inline-block;
+  border-left: 6px solid transparent
+  border-right: 6px solid transparent
+  border-bottom: 10px solid $green
+
+.arrow-down
+  width: 0
+  height: 0
+  display: inline-block;
+  border-left: 6px solid transparent
+  border-right: 6px solid transparent
+  border-top: 10px solid $red
 
 </style>
