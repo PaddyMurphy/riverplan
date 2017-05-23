@@ -48,14 +48,21 @@ Rivertable: display all desirable rivers and creeks
           </td>
         </tr>
         <tr class="row-details">
-          <td colspan="4" class="row-details-data">
-            <graph
-              :selected="selected"
-              :startDate="startDate"
-              :endDate="endDate"
-              :graphType="graphType"
-              v-show="selected"
-            />
+          <td colspan="4">
+            <div class="row-details-wrapper columns">
+              <div class="column column-condition is-one-quarter">
+                {{ river.condition }}
+              </div>
+              <div class="column column-graph is-three-quarters">
+                <graph
+                  :selected="selected"
+                  :startDate="startDate"
+                  :endDate="endDate"
+                  :graphType="graphType"
+                  v-show="selected"
+                />
+              </div>
+            </div>
           </td>
         </tr>
       </tbody>
@@ -273,14 +280,31 @@ export default {
 .tools
   margin-bottom: 1rem
 
+.table tr:not(.row-details):hover
+  cursor: pointer
+
 .date,
 .time
   font-size: 0.8rem
 
 // table
 .row-details
-  height: 0
-  display: none;
+  display: none
+
+.row-details-wrapper
+  max-height: 0
+  overflow: hidden
+  animation: grow 0.5s ease-out forwards
+
+.row-details-wrapper.show-row
+  max-height: 70vh
+
+@keyframes grow
+  0%
+    max-height: 0
+
+  100%
+    max-height: 70vh
 
 .show-row
   display: table-row

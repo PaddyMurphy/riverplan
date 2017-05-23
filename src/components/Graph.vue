@@ -106,6 +106,7 @@ export default {
   .graph
     image-rendering: pixelated
     height: auto
+    min-width: 400px
     width: 100%
 
   .graph-wrapper
