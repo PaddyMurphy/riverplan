@@ -291,13 +291,13 @@ export default {
 .row-details
   display: none
 
+// TODO: animating to max-height doesn't expand beyond
 .row-details-wrapper
-  max-height: 0
-  overflow: hidden
-  animation: grow 0.5s ease-out forwards
+  // max-height: 0
+  // animation: grow 0.5s ease-out forwards
 
 .row-details-wrapper.show-row
-  max-height: 70vh
+  // max-height: 70vh
 
 @keyframes grow
   0%
