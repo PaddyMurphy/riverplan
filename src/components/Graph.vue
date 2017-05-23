@@ -20,26 +20,29 @@ export default {
   props: {
     radioDateType: {
       type: String,
-      required: true
+      required: false,
+      default: 'period'
     },
     selected: {
       type: String,
-      required: true
+      required: false
     },
     startDate: {
       required: true
     },
     endDate: {
       type: [String, Date],
-      required: true
+      required: false,
+      default: new Date().toISOString().split('T')[0] // today
     },
     graphType: {
       type: String,
-      required: false
+      required: false,
+      default: '00060' // defaults to cfs
     },
     period: {
       type: Number,
-      required: true,
+      required: false,
       default: 7
     }
   },
@@ -48,12 +51,13 @@ export default {
   },
   methods: {
     displayGraph: function () {
+      if (!this.selected) return
       // display a graph of the flow
       // TODO: catch error for undefined params
       //       effects: Pecas at Pecos river 08419000
       //       parm_cd=00060 (cfs) or 00065 (guage height ft)
-      var image;
       var vm = this;
+      var image;
       var start = vm.startDate;
       var end = vm.endDate;
       // NOTE: usgs documentation is incorrect 'startDt' is 'begin_date'

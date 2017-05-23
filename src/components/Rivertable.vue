@@ -1,10 +1,9 @@
 <!--
 Rivertable: display all desirable rivers and creeks
+- esdocs - add comments
 - Display: Name, cfs, date, whitewater class, location, color rows to indicate flow
-- Color rows: use default conditions unless overridden
+- Color rows: use default conditions UNLESS OVERRIDEN
 - Click row: expand below with river details
-- add fontawesome
-- compare latest cfs with oldest to determine rising or falling
 -->
 
 <template>
@@ -17,7 +16,7 @@ Rivertable: display all desirable rivers and creeks
       <thead>
         <tr>
           <th>Site Name</th>
-          <th>CFS</th>
+          <th><abbr title="cubic feet per second">CFS</abbr></th>
           <th>Date</th>
           <th>Map</th>
         </tr>
@@ -25,13 +24,16 @@ Rivertable: display all desirable rivers and creeks
       <tfoot>
         <tr>
           <th>Site Name</th>
-          <th>CFS</th>
+          <th><abbr title="cubic feet per second">CFS</abbr></th>
           <th>Date</th>
           <th>Map</th>
         </tr>
       </tfoot>
-      <tbody>
-        <tr v-for="river in riversFormatted" :class="river.level">
+      <tbody v-for="(river, index) in riversFormatted">
+        <tr :class="river.level"
+          :data-selected="river.site"
+          @click="selectRiver"
+        >
           <th>{{ river.name }}</th>
           <td>
             {{ river.cfs }}
@@ -45,6 +47,17 @@ Rivertable: display all desirable rivers and creeks
             <a :href="river.location">Gauge</a>
           </td>
         </tr>
+        <tr class="row-details">
+          <td colspan="4" class="row-details-data">
+            <graph
+              :selected="selected"
+              :startDate="startDate"
+              :endDate="endDate"
+              :graphType="graphType"
+              v-show="selected"
+            />
+          </td>
+        </tr>
       </tbody>
     </table>
   </section> <!-- END rivertable -->
@@ -52,6 +65,7 @@ Rivertable: display all desirable rivers and creeks
 
 <script>
 import axios from 'axios'
+import Graph from '@/components/Graph'
 import Rivers from '@/rivers.json'
 import Conditions from '@/conditions.json'
 
@@ -60,10 +74,9 @@ export default {
   data () {
     return {
       baseMapUrl: '//maps.google.com/?q=',
-      longitude: undefined,
-      latitude: undefined,
-      mapUrl: undefined,
       columns: ['name', 'cfs'],
+      endDate: new Date().toISOString().split('T')[0],
+      startDate: undefined,
       error: undefined,
       graphType: '00060', // defaults to cfs
       loading: false,
@@ -72,7 +85,8 @@ export default {
       valueBaseUrl: 'https://waterservices.usgs.gov/nwis/iv/',
       reverse: false,
       riversFormatted: [],
-      sortKey: 'name'
+      sortKey: 'name',
+      selected: undefined
     }
   },
   computed: {
@@ -89,6 +103,9 @@ export default {
       return list.join();
     }
   },
+  components: {
+    'graph': Graph
+  },
   mounted: function () {
     // set selected river and fetch if routed from url
     if (this.$route.name === 'RivertableUrl') {}
@@ -96,6 +113,31 @@ export default {
     this.getUsgsData();
   },
   methods: {
+    selectRiver: function (e) {
+      const target = e.currentTarget;
+
+      // deselect if clicking the active row
+      if (target.classList.contains('is-selected')) {
+        this.resetTable();
+        this.selected = undefined;
+      } else {
+        this.resetTable();
+        // set selected
+        target.classList.add('is-selected');
+        this.selected = target.dataset.selected;
+        // expand next row
+        target.nextElementSibling.classList.add('show-row');
+      }
+    },
+    resetTable: function () {
+      const selected = this.$el.querySelector('tr.is-selected');
+      const rowDetailsShown = this.$el.querySelector('.show-row');
+      // remove existing selected
+      if (selected) {
+        selected.classList.remove('is-selected');
+        rowDetailsShown.classList.remove('show-row');
+      }
+    },
     /**
      * Fetches usgs instant data from rivers.json.
      * @return {number[]} response
@@ -144,6 +186,7 @@ export default {
       let rising;
       let date;
       let geo;
+      let site;
 
       response.forEach(function (d, i) {
         // the last item is the latest value
@@ -153,10 +196,13 @@ export default {
 
         date = new Date(currentValue.dateTime);
         geo = d.sourceInfo.geoLocation.geogLocation;
+        site = d.sourceInfo.siteCode[0].value;
         rising = (parseInt(currentValue.value, 10) > parseInt(oldestValue, 10));
+
         river = {
           'name': d.sourceInfo.siteName,
           'location': vm.baseMapUrl + geo.latitude + ',+' + geo.longitude,
+          'site': site,
           'date': date.toDateString(),
           'time': date.toLocaleTimeString(),
           'cfs': currentValue.value,
@@ -230,6 +276,14 @@ export default {
 .date,
 .time
   font-size: 0.8rem
+
+// table
+.row-details
+  height: 0
+  display: none;
+
+.show-row
+  display: table-row
 
 // table row colors
 .level-0
