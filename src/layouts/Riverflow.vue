@@ -66,7 +66,7 @@
           <abbr class="rate-abbr" title="cubic feet per second">CFS</abbr>
         </div>
 
-        <a v-bind:href="mapUrl" v-if="mapUrl">Location of guage</a>
+        <a :href="mapUrl" v-if="mapUrl">Location of gauge</a>
         <div class="time-group">
           <span v-if="latestDate">{{ latestDate }} at {{ latestTime }}</span>
         </div>

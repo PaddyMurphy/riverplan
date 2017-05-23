@@ -14,6 +14,10 @@
         <router-link tag="li" to="/riverflow">
           <a>Riverflow</a>
         </router-link>
+
+        <router-link tag="li" to="/rivertable">
+          <a>Rivertable</a>
+        </router-link>
       </ul>
     </div>
   </header>
@@ -51,12 +55,6 @@ export default {
 
 .title, .tagline
   margin: 1rem $default-padding
-
-.title
-  font-size: 1.2rem
-
-.tagline
-  font-size: 1rem
 
 .tabs li:first-child
   padding-left: 1rem

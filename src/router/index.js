@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Map from '@/components/Map'
 import Riverflow from '@/layouts/Riverflow'
+import Rivertable from '@/components/Rivertable'
 
 Vue.use(Router)
 
@@ -32,6 +33,16 @@ export default new Router({
       path: '/riverflow/:river',
       name: 'RiverflowUrl',
       component: Riverflow
+    },
+    {
+      path: '/rivertable',
+      name: 'Rivertable',
+      component: Rivertable
+    },
+    {
+      path: '/rivertable/:river',
+      name: 'RivertableUrl',
+      component: Rivertable
     },
     {
       path: '*',
