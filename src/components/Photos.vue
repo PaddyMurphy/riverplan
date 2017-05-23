@@ -38,6 +38,7 @@ export default {
   },
   methods: {
     buildFlickrTags: function () {
+      // TODO: rewrite this to accept tags
       // get the tags from the select option text and trim everything after ':'
       this.flickrTags = this.siteName.replace(/:.*/, '').trim();
       // combine the river name as one tag

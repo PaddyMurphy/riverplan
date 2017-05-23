@@ -15,7 +15,7 @@ Rivertable: display all desirable rivers and creeks
     <table class="table" v-show="riversFormatted.length">
       <thead>
         <tr>
-          <th>Site Name</th>
+          <th>River Name</th>
           <th><abbr title="cubic feet per second">CFS</abbr></th>
           <th>Date</th>
           <th>Map</th>
@@ -23,7 +23,7 @@ Rivertable: display all desirable rivers and creeks
       </thead>
       <tfoot>
         <tr>
-          <th>Site Name</th>
+          <th>River Name</th>
           <th><abbr title="cubic feet per second">CFS</abbr></th>
           <th>Date</th>
           <th>Map</th>
@@ -51,7 +51,12 @@ Rivertable: display all desirable rivers and creeks
           <td colspan="4">
             <div class="row-details-wrapper columns">
               <div class="column column-condition is-one-quarter">
-                {{ river.condition }}
+                <p>{{ river.condition }}</p>
+
+                <!-- <photos
+                  :siteName="selectedText"
+                  v-show="selectedText">
+                </photos> -->
               </div>
               <div class="column column-graph is-three-quarters">
                 <graph
@@ -73,6 +78,7 @@ Rivertable: display all desirable rivers and creeks
 <script>
 import axios from 'axios'
 import Graph from '@/components/Graph'
+// import Photos from '@/components/Photos'
 import Rivers from '@/rivers.json'
 import Conditions from '@/conditions.json'
 
@@ -83,17 +89,17 @@ export default {
       baseMapUrl: '//maps.google.com/?q=',
       columns: ['name', 'cfs'],
       endDate: new Date().toISOString().split('T')[0],
-      startDate: undefined,
       error: undefined,
       graphType: '00060', // defaults to cfs
       loading: false,
       loadingEl: document.querySelector('.loading'),
-      rivers: Rivers.data,
-      valueBaseUrl: 'https://waterservices.usgs.gov/nwis/iv/',
       reverse: false,
+      rivers: Rivers.data,
       riversFormatted: [],
+      selected: undefined,
       sortKey: 'name',
-      selected: undefined
+      startDate: undefined,
+      usgsBaseUrl: 'https://waterservices.usgs.gov/nwis/iv/'
     }
   },
   computed: {
@@ -112,6 +118,7 @@ export default {
   },
   components: {
     'graph': Graph
+    // 'photos': Photos
   },
   mounted: function () {
     // set selected river and fetch if routed from url
@@ -154,7 +161,7 @@ export default {
 
       this.loading = true;
       // fetch all site numbers in rivers.json
-      axios.get(this.valueBaseUrl, {
+      axios.get(this.usgsBaseUrl, {
         params: {
           parameterCd: this.graphType,
           sites: this.sites,
@@ -280,8 +287,10 @@ export default {
 .tools
   margin-bottom: 1rem
 
-.table tr:not(.row-details):hover
-  cursor: pointer
+.table tr:not(.row-details)
+  transition: background-color 0.25s ease-out
+  &:hover
+    cursor: pointer
 
 .date,
 .time

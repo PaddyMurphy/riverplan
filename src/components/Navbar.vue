@@ -8,15 +8,10 @@
     <div class="tabs" v-once>
       <ul>
         <router-link tag="li" to="/">
+          <a>Rivers</a>
+        </router-link>
+        <router-link tag="li" to="/map">
           <a>Map</a>
-        </router-link>
-
-        <router-link tag="li" to="/riverflow">
-          <a>Riverflow</a>
-        </router-link>
-
-        <router-link tag="li" to="/rivertable">
-          <a>Rivertable</a>
         </router-link>
       </ul>
     </div>
