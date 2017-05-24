@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Map from '@/components/Map'
-import Rivertable from '@/components/Rivertable'
+import Map from '@/layouts/Map'
+import Rivertable from '@/layouts/Rivertable'
 
 Vue.use(Router)
 

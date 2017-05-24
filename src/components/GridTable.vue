@@ -69,7 +69,8 @@ export default {
   props: {
     data: Array,
     columns: Array,
-    filterKey: String
+    filterKey: String,
+    graphType: String
   },
   data () {
     let sortOrders = {}
@@ -78,10 +79,8 @@ export default {
     })
 
     return {
-      baseMapUrl: '//maps.google.com/?q=',
       endDate: new Date().toISOString().split('T')[0],
       error: false,
-      graphType: '00060', // defaults to cfs
       loading: false,
       selected: undefined,
       sortKey: 'name',

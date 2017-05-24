@@ -7,18 +7,30 @@ Rivertable: display all desirable rivers and creeks
 -->
 <template>
   <section class="section rivertable">
-    <div class="container tools is-clearfix">
-      <div v-if="error" class="notification is-danger is-pulled-left">
-        <button class="delete" @click="error = undefined"></button>
-        {{ error }}
+    <div v-if="error" class="notification is-danger">
+      <button class="delete" @click="error = undefined"></button>
+      {{ error }}
+    </div>
+    <div class="columns is-flex tools">
+      <div class="column column-search is-three-quarters">
+        <div class="field level-item">
+          <label class="label">Search</label>
+          <p class="control">
+            <input name="query" v-model="searchQuery" class="input" type="text" placeholder="Filter the table">
+          </p>
+        </div>
       </div>
-      <button :class="{ 'is-loading' : loading }" class="button is-primary is-pulled-right" @click="getUsgsData">refresh river data</button>
+
+      <div class="column column-button is-one-quarter">
+        <button :class="{ 'is-loading' : loading }" class="button is-primary" @click="getUsgsData">refresh river data</button>
+      </div>
     </div>
 
     <grid-table
       :data="riversFormatted"
       :columns="columns"
-      :filter-key="searchQuery">
+      :filter-key="searchQuery"
+      :graphType="graphType">
     </grid-table>
   </section> <!-- END rivertable -->
 </template>
@@ -33,14 +45,15 @@ export default {
   name: 'rivertable',
   data () {
     return {
-      error: false,
+      baseMapUrl: '//maps.google.com/?q=',
+      baseUsgsUrl: 'https://waterservices.usgs.gov/nwis/iv/',
       columns: ['name', 'cfs'],
+      error: false,
       graphType: '00060', // defaults to cfs
       loading: false,
       rivers: Rivers.data,
       riversFormatted: [],
-      searchQuery: '',
-      usgsBaseUrl: 'https://waterservices.usgs.gov/nwis/iv/'
+      searchQuery: ''
     }
   },
   computed: {
@@ -77,7 +90,7 @@ export default {
       vm.riversFormatted = [];
       vm.loading = true;
       // fetch all site numbers in rivers.json
-      axios.get(this.usgsBaseUrl, {
+      axios.get(this.baseUsgsUrl, {
         params: {
           parameterCd: this.graphType,
           sites: this.sites,
@@ -196,95 +209,18 @@ export default {
 .tools
   margin-bottom: 1rem
 
-.table tr:not(.row-details)
-  transition: background-color 0.25s ease-out
-  &:hover
-    cursor: pointer
+.column-search
+  min-width: 200px
+  .field
+    justify-content: flex-start
+  label
+    margin: 0 0.5rem 0 0
 
-.date,
-.time
-  font-size: 0.8rem
+.columns
+  flex-wrap: wrap
 
-// table
-.row-details
-  display: none
+.column-button
+  justify-content: flex-end
 
-// TODO: animating to max-height doesn't expand beyond
-.row-details-wrapper
-  // max-height: 0
-  // animation: grow 0.5s ease-out forwards
-
-.row-details-wrapper.show-row
-  // max-height: 70vh
-
-@keyframes grow
-  0%
-    max-height: 0
-
-  100%
-    max-height: 70vh
-
-.show-row
-  display: table-row
-
-// table row colors
-.level-0
-  background-color: lighten($red, 10%)
-
-.level-1
-  background-color: lighten($red, 20%)
-
-.level-2
-  background-color: lighten($red, 30%)
-
-.level-3
-  background-color: lighten($green, 40%)
-
-.level-4
-  background-color: lighten($green, 30%)
-
-.level-5
-  background-color: lighten($green, 20%)
-
-.level-6
-  background-color: lighten($green, 10%)
-
-// arrows
-.arrow-up
-  width: 0
-  height: 0
-  display: inline-block;
-  border-left: 6px solid transparent
-  border-right: 6px solid transparent
-  border-bottom: 10px solid $green
-
-.arrow-down
-  width: 0
-  height: 0
-  display: inline-block;
-  border-left: 6px solid transparent
-  border-right: 6px solid transparent
-  border-top: 10px solid $red
-// sort arrows
-th.active .arrow
-  opacity: 1
-
-.arrow
-  display: inline-block
-  vertical-align: middle
-  width: 0
-  height: 0
-  margin-left: 5px
-  opacity: 0.66
-
-.arrow.asc
-  border-left: 4px solid transparent
-  border-right: 4px solid transparent
-  border-bottom: 4px solid $blue
-
-.arrow.dsc
-  border-left: 4px solid transparent
-  border-right: 4px solid transparent
-  border-top: 4px solid $blue
 
 </style>
