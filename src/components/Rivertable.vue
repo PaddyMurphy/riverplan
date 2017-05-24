@@ -9,6 +9,10 @@ Rivertable: display all desirable rivers and creeks
 <template>
   <section class="section rivertable">
     <div class="container tools is-clearfix">
+      <div v-if="error" class="notification is-danger is-pulled-left">
+        <button class="delete" @click="error = undefined"></button>
+        {{ error }}
+      </div>
       <button :class="{ 'is-loading' : loading }" class="button is-primary is-pulled-right" @click="getUsgsData">refresh river data</button>
     </div>
 
@@ -89,10 +93,9 @@ export default {
       baseMapUrl: '//maps.google.com/?q=',
       columns: ['name', 'cfs'],
       endDate: new Date().toISOString().split('T')[0],
-      error: undefined,
+      error: false,
       graphType: '00060', // defaults to cfs
       loading: false,
-      loadingEl: document.querySelector('.loading'),
       reverse: false,
       rivers: Rivers.data,
       riversFormatted: [],
@@ -159,7 +162,7 @@ export default {
     getUsgsData: function () {
       var vm = this;
 
-      this.loading = true;
+      vm.loading = true;
       // fetch all site numbers in rivers.json
       axios.get(this.usgsBaseUrl, {
         params: {
@@ -172,17 +175,16 @@ export default {
       })
       .then(response => {
         vm.loading = false;
-
         if (response.data.value.timeSeries) {
           vm.displayUsgsData(response.data.value.timeSeries);
-          vm.error = null;
+          vm.error = undefined;
         } else {
           vm.error = 'no river data available';
         }
         // TODO: set the url
       })
       .catch(error => {
-        console.error(error.message);
+        console.error(error);
         vm.loading = false;
         vm.error = error.message;
       });
@@ -203,14 +205,18 @@ export default {
       let site;
 
       response.forEach(function (d, i) {
+        // NOTE: some rivers do not support cfs (00060)
         // the last item is the latest value
         oldestValue = d.values[0].value[0].value;
         // TODO: don't reverse... order makes a difference here
         currentValue = d.values[0].value.reverse()[0];
 
         date = new Date(currentValue.dateTime);
+        // console.log(d.sourceInfo);
         geo = d.sourceInfo.geoLocation.geogLocation;
         site = d.sourceInfo.siteCode[0].value;
+        // TODO: catch error for undefined params
+        // test Guadalupe at Gonzales 08169845
         rising = (parseInt(currentValue.value, 10) > parseInt(oldestValue, 10));
 
         river = {
@@ -233,10 +239,6 @@ export default {
       this.reverse = (this.sortKey === sortKey) ? !this.reverse : false;
 
       this.sortKey = sortKey;
-    },
-    toggleLoading: function () {
-      var style = this.loading === true ? 'flex' : 'none';
-      this.loadingEl.style.display = style;
     },
     /**
      * Returns condition description and level color code from conditions.json
