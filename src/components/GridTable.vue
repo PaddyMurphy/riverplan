@@ -81,7 +81,6 @@ export default {
     return {
       endDate: new Date().toISOString().split('T')[0],
       error: false,
-      loading: false,
       selected: undefined,
       sortKey: 'name',
       sortOrders: sortOrders,

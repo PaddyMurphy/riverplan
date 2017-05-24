@@ -102,15 +102,22 @@ export default {
 </script>
 
 <style lang="sass">
-  // unable to scope
-  .graph
-    image-rendering: pixelated
-    height: auto
-    max-height: 500px
-    min-width: 400px
-    width: 100%
+// unable to scope
+.graph
+  image-rendering: pixelated
+  height: auto
+  max-height: 500px
+  min-width: 400px
+  width: 100%
 
-  .graph-wrapper
-    text-align: center
+.graph-wrapper
+  position: relative
+  text-align: center
+  display: flex
+  align-items: center
+  justify-content: center
+  height: 100%
 
+.graph-loading
+  flex: 1
 </style>
