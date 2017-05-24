@@ -44,11 +44,6 @@
           <div class="row-details-wrapper columns">
             <div class="column column-condition is-one-quarter">
               <p>{{ river.condition }}</p>
-
-              <!-- <photos
-                :siteName="selectedText"
-                v-show="selectedText">
-              </photos> -->
             </div>
             <div class="column column-graph is-three-quarters">
               <graph
@@ -89,7 +84,7 @@ export default {
       graphType: '00060', // defaults to cfs
       loading: false,
       selected: undefined,
-      sortKey: '',
+      sortKey: 'name',
       sortOrders: sortOrders,
       startDate: undefined
     }
@@ -120,11 +115,21 @@ export default {
         })
       }
       if (sortKey) {
-        data = data.slice().sort(function (a, b) {
-          a = a[sortKey]
-          b = b[sortKey]
-          return (a === b ? 0 : a > b ? 1 : -1) * order
-        })
+        if (sortKey === 'cfs') {
+          // sort by number
+          data = data.slice().sort(function (a, b) {
+            a = a[sortKey]
+            b = b[sortKey]
+            return (a - b) * order
+          })
+        } else {
+          // sort by string
+          data = data.slice().sort(function (a, b) {
+            a = a[sortKey]
+            b = b[sortKey]
+            return (a === b ? 0 : a > b ? 1 : -1) * order
+          })
+        }
       }
       return data
     }
