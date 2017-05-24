@@ -5,7 +5,6 @@ Rivertable: display all desirable rivers and creeks
 - Color rows: use default conditions UNLESS OVERRIDEN
 - Click row: expand below with river details
 -->
-
 <template>
   <section class="section rivertable">
     <div class="container tools is-clearfix">
@@ -16,92 +15,31 @@ Rivertable: display all desirable rivers and creeks
       <button :class="{ 'is-loading' : loading }" class="button is-primary is-pulled-right" @click="getUsgsData">refresh river data</button>
     </div>
 
-    <table class="table" v-show="riversFormatted.length">
-      <thead>
-        <tr>
-          <th>River Name</th>
-          <th><abbr title="cubic feet per second">CFS</abbr></th>
-          <th>Date</th>
-          <th>Map</th>
-        </tr>
-      </thead>
-      <tfoot>
-        <tr>
-          <th>River Name</th>
-          <th><abbr title="cubic feet per second">CFS</abbr></th>
-          <th>Date</th>
-          <th>Map</th>
-        </tr>
-      </tfoot>
-      <tbody v-for="(river, index) in riversFormatted">
-        <tr :class="river.level"
-          :data-selected="river.site"
-          @click="selectRiver"
-        >
-          <th>{{ river.name }}</th>
-          <td>
-            {{ river.cfs }}
-            <span :class="river.rising ? 'arrow-up' : 'arrow-down'"></span>
-          </td>
-          <td>
-            <span class="date">{{ river.date }}</span>
-            <span class="time">{{ river.time }}</span>
-          </td>
-          <td>
-            <a :href="river.location">Gauge</a>
-          </td>
-        </tr>
-        <tr class="row-details">
-          <td colspan="4">
-            <div class="row-details-wrapper columns">
-              <div class="column column-condition is-one-quarter">
-                <p>{{ river.condition }}</p>
-
-                <!-- <photos
-                  :siteName="selectedText"
-                  v-show="selectedText">
-                </photos> -->
-              </div>
-              <div class="column column-graph is-three-quarters">
-                <graph
-                  :selected="selected"
-                  :startDate="startDate"
-                  :endDate="endDate"
-                  :graphType="graphType"
-                  v-show="selected"
-                />
-              </div>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <grid-table
+      :data="riversFormatted"
+      :columns="columns"
+      :filter-key="searchQuery">
+    </grid-table>
   </section> <!-- END rivertable -->
 </template>
 
 <script>
 import axios from 'axios'
-import Graph from '@/components/Graph'
-// import Photos from '@/components/Photos'
-import Rivers from '@/rivers.json'
 import Conditions from '@/conditions.json'
+import GridTable from '@/components/GridTable'
+import Rivers from '@/rivers.json'
 
 export default {
   name: 'rivertable',
   data () {
     return {
-      baseMapUrl: '//maps.google.com/?q=',
-      columns: ['name', 'cfs'],
-      endDate: new Date().toISOString().split('T')[0],
       error: false,
+      columns: ['name', 'cfs'],
       graphType: '00060', // defaults to cfs
       loading: false,
-      reverse: false,
       rivers: Rivers.data,
       riversFormatted: [],
-      selected: undefined,
-      sortKey: 'name',
-      startDate: undefined,
+      searchQuery: '',
       usgsBaseUrl: 'https://waterservices.usgs.gov/nwis/iv/'
     }
   },
@@ -120,8 +58,7 @@ export default {
     }
   },
   components: {
-    'graph': Graph
-    // 'photos': Photos
+    'grid-table': GridTable
   },
   mounted: function () {
     // set selected river and fetch if routed from url
@@ -130,31 +67,6 @@ export default {
     this.getUsgsData();
   },
   methods: {
-    selectRiver: function (e) {
-      const target = e.currentTarget;
-
-      // deselect if clicking the active row
-      if (target.classList.contains('is-selected')) {
-        this.resetTable();
-        this.selected = undefined;
-      } else {
-        this.resetTable();
-        // set selected
-        target.classList.add('is-selected');
-        this.selected = target.dataset.selected;
-        // expand next row
-        target.nextElementSibling.classList.add('show-row');
-      }
-    },
-    resetTable: function () {
-      const selected = this.$el.querySelector('tr.is-selected');
-      const rowDetailsShown = this.$el.querySelector('.show-row');
-      // remove existing selected
-      if (selected) {
-        selected.classList.remove('is-selected');
-        rowDetailsShown.classList.remove('show-row');
-      }
-    },
     /**
      * Fetches usgs instant data from rivers.json.
      * @return {number[]} response
@@ -162,6 +74,7 @@ export default {
     getUsgsData: function () {
       var vm = this;
 
+      vm.riversFormatted = [];
       vm.loading = true;
       // fetch all site numbers in rivers.json
       axios.get(this.usgsBaseUrl, {
@@ -212,7 +125,6 @@ export default {
         currentValue = d.values[0].value.reverse()[0];
 
         date = new Date(currentValue.dateTime);
-        // console.log(d.sourceInfo);
         geo = d.sourceInfo.geoLocation.geogLocation;
         site = d.sourceInfo.siteCode[0].value;
         // TODO: catch error for undefined params
@@ -234,11 +146,6 @@ export default {
 
         vm.riversFormatted.push(river);
       });
-    },
-    sortBy: function (sortKey) {
-      this.reverse = (this.sortKey === sortKey) ? !this.reverse : false;
-
-      this.sortKey = sortKey;
     },
     /**
      * Returns condition description and level color code from conditions.json
@@ -358,5 +265,26 @@ export default {
   border-left: 6px solid transparent
   border-right: 6px solid transparent
   border-top: 10px solid $red
+// sort arrows
+th.active .arrow
+  opacity: 1
+
+.arrow
+  display: inline-block
+  vertical-align: middle
+  width: 0
+  height: 0
+  margin-left: 5px
+  opacity: 0.66
+
+.arrow.asc
+  border-left: 4px solid transparent
+  border-right: 4px solid transparent
+  border-bottom: 4px solid $blue
+
+.arrow.dsc
+  border-left: 4px solid transparent
+  border-right: 4px solid transparent
+  border-top: 4px solid $blue
 
 </style>
