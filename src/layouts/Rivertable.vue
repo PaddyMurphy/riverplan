@@ -122,13 +122,15 @@ export default {
      */
     displayUsgsData: function (response) {
       const vm = this;
+      const today = new Date();
       let river = {};
-      let oldestValue;
       let currentValue;
-      let rising;
       let date;
       let geo;
+      let oldestValue;
+      let rising;
       let site;
+      let time;
 
       response.forEach(function (d, i) {
         // NOTE: some rivers do not support cfs (00060)
@@ -136,20 +138,23 @@ export default {
         oldestValue = d.values[0].value[0].value;
         // TODO: don't reverse... order makes a difference here
         currentValue = d.values[0].value.reverse()[0];
-
         date = new Date(currentValue.dateTime);
+        time = date.toLocaleTimeString();
+        // onl
+        if (today.toDateString() === date.toDateString()) {
+          date = '';
+        }
+
         geo = d.sourceInfo.geoLocation.geogLocation;
         site = d.sourceInfo.siteCode[0].value;
-        // TODO: catch error for undefined params
-        // test Guadalupe at Gonzales 08169845
         rising = (parseInt(currentValue.value, 10) > parseInt(oldestValue, 10));
 
         river = {
           'name': d.sourceInfo.siteName,
           'location': vm.baseMapUrl + geo.latitude + ',+' + geo.longitude,
           'site': site,
-          'date': date.toDateString(),
-          'time': date.toLocaleTimeString(),
+          'date': date,
+          'time': time,
           'cfs': currentValue.value,
           'oldCfs': oldestValue,
           'condition': vm.getConditions(currentValue.value).condition,
@@ -157,8 +162,26 @@ export default {
           'rising': rising
         }
 
-        vm.riversFormatted.push(river);
+        vm.mergeRiverInfo(river);
       });
+    },
+    /**
+     * Merges class from rivers.json to matching response
+     * matches are based on USGS site numbers
+     * @param {Object} river
+     */
+    mergeRiverInfo: function (river) {
+      const vm = this;
+      const currentRiver = river.site;
+
+      vm.rivers.forEach(function (d) {
+        // add white water class
+        if (d.value === currentRiver) {
+          river.class = d.class;
+        }
+      });
+
+      vm.riversFormatted.push(river);
     },
     /**
      * Returns condition description and level color code from conditions.json

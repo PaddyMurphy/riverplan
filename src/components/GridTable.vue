@@ -9,7 +9,8 @@
           <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'">
           </span>
         </th>
-        <th>Date</th>
+        <th>Class</th>
+        <th>Time</th>
         <th>Map</th>
       </tr>
     </thead>
@@ -17,7 +18,8 @@
       <tr>
         <th>River Name</th>
         <th><abbr title="cubic feet per second">CFS</abbr></th>
-        <th>Date</th>
+        <th>Class</th>
+        <th>Time</th>
         <th>Map</th>
       </tr>
     </tfoot>
@@ -31,6 +33,7 @@
           {{ river.cfs }}
           <span :class="river.rising ? 'arrow-up' : 'arrow-down'"></span>
         </td>
+        <td class="wwclass">{{ river.class }}</td>
         <td>
           <span class="date">{{ river.date }}</span>
           <span class="time">{{ river.time }}</span>
@@ -141,8 +144,8 @@ export default {
     }
   },
   mounted: function () {
-    // set selected river and fetch if routed from url
-    if (this.$route.name === 'RivertableUrl') {}
+    // TODO: set selected river and fetch if routed from url
+    // if (this.$route.name === 'RivertableUrl') {}
   },
   methods: {
     sortBy: function (key) {
