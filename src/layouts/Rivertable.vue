@@ -33,6 +33,7 @@ Rivertable: display all desirable rivers and creeks
         :data="riversFormatted"
         :columns="columns"
         :filter-key="searchQuery"
+        :loading="loading"
         :graphType="graphType">
       </grid-table>
     </section>

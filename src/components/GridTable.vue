@@ -1,67 +1,70 @@
 <template>
-  <table class="table" v-if="filteredData.length">
-    <thead>
-      <tr>
-        <th v-for="key in columns"
-          @click="sortBy(key)"
-          :class="[{ active: sortKey == key}, key]">
-          {{ key | capitalize }}
-          <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'">
-          </span>
-        </th>
-        <th>Class</th>
-        <th>Time</th>
-        <th>Map</th>
-      </tr>
-    </thead>
-    <tfoot>
-      <tr>
-        <th>River Name</th>
-        <th><abbr title="cubic feet per second">CFS</abbr></th>
-        <th>Class</th>
-        <th>Time</th>
-        <th>Map</th>
-      </tr>
-    </tfoot>
-    <tbody v-for="river in filteredData">
-      <tr :class="river.level"
-        :data-selected="river.site"
-        @click="selectRiver"
-      >
-        <th>{{ river.name }}</th>
-        <td>
-          {{ river.cfs }}
-          <span :class="river.rising ? 'arrow-up' : 'arrow-down'"></span>
-        </td>
-        <td class="wwclass">{{ river.class }}</td>
-        <td>
-          <span class="date">{{ river.date }}</span>
-          <span class="time">{{ river.time }}</span>
-        </td>
-        <td>
-          <a :href="river.location">Gauge</a>
-        </td>
-      </tr>
-      <tr class="row-details">
-        <td colspan="5">
-          <div class="row-details-wrapper columns">
-            <div class="column column-condition is-one-quarter">
-              <p>{{ river.condition }}</p>
+  <div class="gridtable">
+    <div v-show="loading" class="loading notification is-warning">Loading river information...</div>
+    <table class="table" v-show="filteredData.length">
+      <thead>
+        <tr>
+          <th v-for="key in columns"
+            @click="sortBy(key)"
+            :class="[{ active: sortKey == key}, key]">
+            {{ key | capitalize }}
+            <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'">
+            </span>
+          </th>
+          <th>Class</th>
+          <th>Time</th>
+          <th>Map</th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <th>River Name</th>
+          <th><abbr title="cubic feet per second">CFS</abbr></th>
+          <th>Class</th>
+          <th>Time</th>
+          <th>Map</th>
+        </tr>
+      </tfoot>
+      <tbody v-for="river in filteredData">
+        <tr :class="river.level"
+          :data-selected="river.site"
+          @click="selectRiver"
+        >
+          <th>{{ river.name }}</th>
+          <td>
+            {{ river.cfs }}
+            <span :class="river.rising ? 'arrow-up' : 'arrow-down'"></span>
+          </td>
+          <td class="wwclass">{{ river.class }}</td>
+          <td>
+            <span class="date">{{ river.date }}</span>
+            <span class="time">{{ river.time }}</span>
+          </td>
+          <td>
+            <a :href="river.location">Gauge</a>
+          </td>
+        </tr>
+        <tr class="row-details">
+          <td colspan="5">
+            <div class="row-details-wrapper columns">
+              <div class="column column-condition is-one-quarter">
+                <p>{{ river.condition }}</p>
+              </div>
+              <div class="column column-graph is-three-quarters">
+                <graph
+                  :selected="selected"
+                  :startDate="startDate"
+                  :endDate="endDate"
+                  :graphType="graphType"
+                  v-show="selected"
+                />
+              </div>
             </div>
-            <div class="column column-graph is-three-quarters">
-              <graph
-                :selected="selected"
-                :startDate="startDate"
-                :endDate="endDate"
-                :graphType="graphType"
-                v-show="selected"
-              />
-            </div>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </template>
 
 <script>
@@ -73,6 +76,7 @@ export default {
     data: Array,
     columns: Array,
     filterKey: String,
+    loading: Boolean,
     graphType: String
   },
   data () {
@@ -187,6 +191,9 @@ export default {
 @import '../../node_modules/bulma/sass/utilities/initial-variables'
 // import custom variables
 @import '../assets/scss/bulma-styles.sass'
+.loading
+  text-align: center
+
 
 .tools
   margin-bottom: 1rem
