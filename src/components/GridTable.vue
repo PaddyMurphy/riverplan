@@ -4,7 +4,7 @@
       <tr>
         <th v-for="key in columns"
           @click="sortBy(key)"
-          :class="{ active: sortKey == key }">
+          :class="[{ active: sortKey == key}, key]">
           {{ key | capitalize }}
           <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'">
           </span>
@@ -263,6 +263,10 @@ export default {
 // sort arrows
 th.active .arrow
   opacity: 1
+
+.cfs
+  min-width: 5rem
+  text-transform: uppercase
 
 .arrow
   display: inline-block

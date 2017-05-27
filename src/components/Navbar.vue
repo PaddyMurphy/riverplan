@@ -5,7 +5,7 @@
       <p class="tagline">{{ tagline }}</p>
     </div>
 
-    <div class="tabs" v-once>
+    <div class="tabs is-boxed" v-once>
       <ul>
         <router-link tag="li" to="/">
           <a>Rivers</a>
@@ -52,7 +52,7 @@ export default {
   margin: 1rem $default-padding
 
 .tabs li:first-child
-  padding-left: 1rem
+  padding-left: 2rem
 
 
 </style>
