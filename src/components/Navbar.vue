@@ -1,19 +1,22 @@
 <template>
   <header class="hero is-bold is-primary">
-    <div class="header is-flex" v-once>
-      <h1 class="title">{{ title }}</h1>
-      <p class="tagline">{{ tagline }}</p>
-    </div>
+    <div class="container">
+      <div class="header is-flex" v-once>
+        <h1 class="title">{{ title }}</h1>
+        <p class="tagline">{{ tagline }}</p>
+      </div>
 
-    <div class="tabs is-boxed" v-once>
-      <ul>
-        <router-link tag="li" to="/">
-          <a>Rivers</a>
-        </router-link>
-        <router-link tag="li" to="/map">
-          <a>Map</a>
-        </router-link>
-      </ul>
+      <div class="tabs is-boxed" v-once>
+        <ul>
+          <li></li>
+          <router-link tag="li" to="/">
+            <a>Rivers</a>
+          </router-link>
+          <router-link tag="li" to="/map">
+            <a>Map</a>
+          </router-link>
+        </ul>
+      </div>
     </div>
   </header>
 </template>
@@ -48,11 +51,14 @@ export default {
   align-items: center
   justify-content: space-between
 
-.title, .tagline
-  margin: 1rem $default-padding
+.hero
+  padding-left: 1.5rem
 
-.tabs li:first-child
-  padding-left: 2rem
+.title, .tagline
+  margin: 1rem $default-padding $default-padding 0
+
+// .tabs li:first-child
+//   padding-left: 2rem
 
 
 </style>
