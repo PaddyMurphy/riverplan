@@ -6,33 +6,37 @@ Rivertable: display all desirable rivers and creeks
 - Click row: expand below with river details
 -->
 <template>
-  <section class="section rivertable">
-    <div v-if="error" class="notification is-danger">
-      <button class="delete" @click="error = undefined"></button>
-      {{ error }}
-    </div>
-    <div class="columns is-flex tools">
-      <div class="column column-search is-three-quarters">
-        <div class="field level-item">
-          <label class="label">Search</label>
-          <p class="control">
-            <input name="query" v-model="searchQuery" class="input" type="text" placeholder="Filter the table">
-          </p>
+  <div class="rivertable">
+    <section class="section">
+      <div v-if="error" class="notification is-danger">
+        <button class="delete" @click="error = undefined"></button>
+        {{ error }}
+      </div>
+      <div class="columns is-flex tools">
+
+        <div class="column column-search is-three-quarters">
+          <div class="field level-item">
+            <label class="label">Search</label>
+            <p class="control">
+              <input name="query" v-model="searchQuery" class="input" type="text" placeholder="Filter the table">
+              <a class="delete is-small" @click="searchQuery = ''"></a>
+            </p>
+          </div>
+        </div>
+
+        <div class="column column-button is-one-quarter">
+          <button :class="{ 'is-loading' : loading }" class="button is-primary" @click="getUsgsData">refresh river data</button>
         </div>
       </div>
 
-      <div class="column column-button is-one-quarter">
-        <button :class="{ 'is-loading' : loading }" class="button is-primary" @click="getUsgsData">refresh river data</button>
-      </div>
-    </div>
-
-    <grid-table
-      :data="riversFormatted"
-      :columns="columns"
-      :filter-key="searchQuery"
-      :graphType="graphType">
-    </grid-table>
-  </section> <!-- END rivertable -->
+      <grid-table
+        :data="riversFormatted"
+        :columns="columns"
+        :filter-key="searchQuery"
+        :graphType="graphType">
+      </grid-table>
+    </section>
+  </div> <!-- END rivertable -->
 </template>
 
 <script>
@@ -245,5 +249,9 @@ export default {
 .column-button
   justify-content: flex-end
 
+.delete
+  position: absolute
+  top: 0.6em
+  right: 0.6rem
 
 </style>

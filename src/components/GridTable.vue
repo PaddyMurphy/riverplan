@@ -43,7 +43,7 @@
         </td>
       </tr>
       <tr class="row-details">
-        <td colspan="4">
+        <td colspan="5">
           <div class="row-details-wrapper columns">
             <div class="column column-condition is-one-quarter">
               <p>{{ river.condition }}</p>

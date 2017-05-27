@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="hero is-bold is-primary">
     <div class="header is-flex" v-once>
       <h1 class="title">{{ title }}</h1>
       <p class="tagline">{{ tagline }}</p>
